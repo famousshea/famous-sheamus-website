@@ -45,7 +45,7 @@ export default function ServicesPage() {
                   </p>
 
                   <Link href={service.permalink} className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors">
-                    View Comprehensive Case Study <ArrowRight className="h-4 w-4" />
+                    Explore This Service <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>

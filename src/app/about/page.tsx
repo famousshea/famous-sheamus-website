@@ -1,51 +1,97 @@
 import React from "react";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
+import { ImageIcon } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <main className="relative min-h-screen pt-32 pb-24 overflow-hidden">
+    <main className="relative min-h-screen pt-32 pb-48 overflow-hidden">
       <TopNav />
       <ContactBadge />
 
       <div className="vignette fixed inset-0 pointer-events-none" />
 
       <div className="container relative mx-auto px-6 max-w-4xl">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-12">
-          About <span className="text-accent underline decoration-4 underline-offset-8">Sheamus</span>
-        </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="space-y-6">
-            <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
-              <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Background</span>
-              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                With over a decade of experience in the technology sector, my journey has evolved from foundational roles in IT support and systems engineering to leading strategic software initiatives and implementation of automated systems. I&apos;ve spent years building robust infrastructures and managing complex operations for companies like prototype:IT and Makeready, eventually specializing in AI-driven automation to bridge the gap between technical complexity and scalable business growth.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
-              <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Philosophy</span>
-              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                My approach is simple: No new software to learn, just pure efficiency. I specialize in building unseen, resilient architectures that work invisibly in the background.
-              </p>
-            </div>
+        {/* Header Row: Title + Photo Placeholder */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              About <span className="text-accent underline decoration-4 underline-offset-8">Sheamus</span>
+            </h1>
+            <p className="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              Fractional CTO. AI Architect. Global-Remote.
+            </p>
           </div>
 
-          <div className="space-y-6">
-            <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
-              <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Core Skills</span>
-              <ul className="space-y-3 text-zinc-600 dark:text-zinc-400">
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> System Architecture Design</li>
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> N8N Automation</li>
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> LLM & AI integrations</li>
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Voice AI</li>
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Process Analysis & Optimization</li>
-                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Fractional Technical Leadership</li>
-              </ul>
+          {/* Photo Placeholder */}
+          <div className="flex items-center justify-center rounded-3xl border-2 border-dashed border-border bg-white/30 dark:bg-zinc-900/30 backdrop-blur-sm h-64 md:h-72 group hover:border-accent/50 transition-colors duration-300">
+            <div className="flex flex-col items-center gap-3 text-zinc-400 group-hover:text-accent transition-colors">
+              <ImageIcon className="h-10 w-10" strokeWidth={1.5} />
+              <p className="text-sm font-medium tracking-wide">Photo Coming Soon</p>
+              <p className="text-xs text-zinc-400">Replace with your image asset</p>
             </div>
           </div>
         </div>
+
+        {/* Philosophy + Core Skills Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
+            <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Philosophy</span>
+            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              My approach is simple: No new software to learn, just pure efficiency. I specialize in building unseen, resilient architectures that work invisibly in the background.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
+            <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Core Skills</span>
+            <ul className="space-y-3 text-zinc-600 dark:text-zinc-400">
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Fractional Technical Leadership</li>
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> System Architecture Design</li>
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> N8N Automation</li>
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> LLM &amp; AI integrations</li>
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Voice AI</li>
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Process Analysis &amp; Optimization</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Full-Width Background Section */}
+        <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm mb-8">
+          <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Background</span>
+          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            With over a decade of experience in the technology sector, my journey has evolved from foundational roles in IT support and systems engineering to leading strategic software initiatives and implementation of automated systems. I&apos;ve spent years building robust infrastructures and managing complex operations for companies like prototype:IT and Makeready, eventually specializing in AI-driven automation to bridge the gap between technical complexity and scalable business growth.
+          </p>
+        </div>
+
+        {/* Full-Width Personal Life Section */}
+        <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm">
+          <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Personal Life</span>
+          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
+            Outside of the keyboard, I&apos;m driven by the same spirit of exploration that defines my work. I&apos;m an avid traveler with a deep passion for experiencing new cultures, cuisines, and landscapes — the world is too vast to see from a desk. I love cooking for others, treating the kitchen as another system to master and a way to bring people together. When I&apos;m not at sea, you&apos;ll find me in the outdoors — hiking, camping, and generally embracing whatever terrain is available. Video games are a constant companion, equal parts creative outlet and competitive arena. But the north star of it all is sailing. My ultimate ambition is to circumnavigate the globe on my own vessel — the most demanding and rewarding systems challenge I can imagine.
+          </p>
+
+          {/* Interest Icon Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+            {[
+              { emoji: "✈️", label: "Travel" },
+              { emoji: "🌍", label: "Exploring" },
+              { emoji: "⛵", label: "Sailing" },
+              { emoji: "🏕️", label: "Outdoors" },
+              { emoji: "🍳", label: "Cooking" },
+              { emoji: "🎮", label: "Gaming" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="flex flex-col items-center gap-2 p-4 rounded-2xl border border-border bg-background/50 hover:border-accent/40 hover:bg-accent/5 transition-all duration-200 group"
+              >
+                <span className="text-2xl group-hover:scale-110 transition-transform duration-200">{item.emoji}</span>
+                <span className="text-xs font-bold text-zinc-500 tracking-widest uppercase">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </main>
   );
