@@ -5,10 +5,12 @@ steps:
       - 'build'
       - 'us-central1-docker.pkg.dev/famous-sheamus-website-462507/cloud-run-source-deploy/famous-sheamus-website:$COMMIT_SHA'
       - '--builder'
-      - 'gcr.io/buildpacks/builder:v1'
+      - 'gcr.io/buildpacks/builder:google-22'
       - '--network'
       - 'cloudbuild'
-
+# Explicitly defining the image to be used by Cloud Run    
+images:
+  - 'us-central1-docker.pkg.dev/famous-sheamus-website-462507/cloud-run-source-deploy/famous-sheamus-website:$COMMIT_SHA'
 # This is the "Magic Fix" that satisfies the error
 options:
   logging: CLOUD_LOGGING_ONLY
