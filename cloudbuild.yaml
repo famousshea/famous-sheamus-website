@@ -1,26 +1,20 @@
 steps:
-  # Step 1: Build the container image using Google's native buildpacks
-  - name: 'gcr.io/k8s-skaffold/pack'
-    entrypoint: 'pack'
-    args:
-      - 'build'
-      - 'us-central1-docker.pkg.dev/famous-sheamus-website-462507/cloud-run-source-deploy/famous-sheamus-website:$COMMIT_SHA'
-      - '--builder'
-      - 'gcr.io/buildpacks/builder:google-22'
-      - '--network'
-      - 'cloudbuild'
-
-  # Step 2: Deploy the newly built image to Cloud Run
+  # This uses the official Google SDK to build your Next.js app with buildpacks 
+  # and deploy it to Cloud Run in one robust step.
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args:
       - 'run'
       - 'deploy'
       - 'famous-sheamus-website'
-      - '--image'
-      - 'us-central1-docker.pkg.dev/famous-sheamus-website-462507/cloud-run-source-deploy/famous-sheamus-website:$COMMIT_SHA'
+      - '--source'
+      - '.'
       - '--region'
       - 'us-central1'
+      - '--image'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/famous-sheamus-website:$COMMIT_SHA'
+      - '--quiet'
 
+# This satisfies the Service Account logging requirement
 options:
   logging: CLOUD_LOGGING_ONLY
