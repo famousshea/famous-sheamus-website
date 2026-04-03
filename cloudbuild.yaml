@@ -1,7 +1,7 @@
 steps:
-  # This step tells Google to build your Next.js app using Buildpacks
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'gcloud'
+  # Step 1: Build the container image using Google's native buildpacks
+  - name: 'gcr.io/k8s-skaffold/pack'
+    entrypoint: 'pack'
     args:
       - 'build'
       - 'us-central1-docker.pkg.dev/famous-sheamus-website-462507/cloud-run-source-deploy/famous-sheamus-website:$COMMIT_SHA'
@@ -9,9 +9,18 @@ steps:
       - 'gcr.io/buildpacks/builder:google-22'
       - '--network'
       - 'cloudbuild'
-# Explicitly defining the image to be used by Cloud Run    
-images:
-  - 'us-central1-docker.pkg.dev/famous-sheamus-website-462507/cloud-run-source-deploy/famous-sheamus-website:$COMMIT_SHA'
-# This is the "Magic Fix" that satisfies the error
+
+  # Step 2: Deploy the newly built image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'famous-sheamus-website'
+      - '--image'
+      - 'us-central1-docker.pkg.dev/famous-sheamus-website-462507/cloud-run-source-deploy/famous-sheamus-website:$COMMIT_SHA'
+      - '--region'
+      - 'us-central1'
+
 options:
   logging: CLOUD_LOGGING_ONLY
