@@ -8,6 +8,7 @@ const blogs = {
       title: s.string().max(99),
       slug: s.path(),
       description: s.string().max(500), // The "2-sentence summary" rule 
+      category: s.string().default("Uncategorized"),
       date: s.isodate(),
       published: s.boolean().default(true),
       body: s.mdx(),
