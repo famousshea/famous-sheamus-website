@@ -46,7 +46,7 @@ export default function AboutPage() {
           <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
             <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Core Skills</span>
             <ul className="space-y-3 text-zinc-600 dark:text-zinc-400">
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Fractional Technical Leadership</li>
+              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Technology Leadership</li>
               <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> System Architecture Design</li>
               <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> N8N Automation</li>
               <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> LLM &amp; AI integrations</li>
