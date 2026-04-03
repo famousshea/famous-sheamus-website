@@ -6,8 +6,8 @@ const blogs = {
   schema: s
     .object({
       title: s.string().max(99),
-      slug: s.path(), 
-      summary: s.string().max(500), // The "2-sentence summary" rule 
+      slug: s.path(),
+      description: s.string().max(500), // The "2-sentence summary" rule 
       date: s.isodate(),
       published: s.boolean().default(true),
       body: s.mdx(),

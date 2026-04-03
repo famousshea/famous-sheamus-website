@@ -72,9 +72,7 @@ export function ServiceFeed() {
   }
 
   return (
-    <div
-      className="flex flex-col gap-4 w-full max-w-sm relative">
-      {/* Subtle connecting line for the timeline effect */}
+    <div className="flex flex-col w-full max-w-sm relative min-h-[600px]">
       <div className="absolute left-[-23px] top-4 bottom-4 w-px bg-border z-0 hidden lg:block border-l border-dashed" />
 
       <AnimatePresence initial={false}>
@@ -84,25 +82,27 @@ export function ServiceFeed() {
           return (
             <motion.div
               key={service.slug}
-              layout
-              initial={{ opacity: 0, height: 0, scale: 0.95 }}
-              animate={{ opacity: 1, height: "auto", scale: 1 }}
-              exit={{ opacity: 0, height: 0, scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 350, damping: 30, mass: 0.8 }}
+              // layout <--- REMOVE THIS
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 150 }} // Increased slightly to clear the pb-4
+              exit={{ opacity: 0, height: 0 }}
+              transition={{
+                height: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 }
+              }}
               className="w-full overflow-hidden"
-              // --- ADD THESE THREE LINES ---
               onMouseEnter={handleInteraction}
               onWheel={handleWheel}
               onTouchStart={handleInteraction}
-            // -----------------------------
             >
               {/* Added padding bottom here instead of flex gap on parent to allow height to collapse seamlessly */}
-              <div className="group relative z-10 w-full pb-4">
-                <Link href={service.permalink} className="block w-full">
+              <div className="group relative z-10 w-full h-[134px] pb-4">
+                <Link href={service.permalink} className="block w-full h-full">
                   {/* Timeline Dot */}
                   <div className="absolute left-[-29px] top-6 h-3 w-3 rounded-full border-2 border-background bg-accent shadow-sm hidden lg:block transition-all group-hover:scale-125 group-hover:shadow-accent/50" />
 
-                  <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-5 shadow-sm backdrop-blur-sm transition-all hover:bg-white dark:hover:bg-zinc-800/80 hover:border-accent/40 hover:shadow-md cursor-pointer">
+                  {/* Added h-full to this div to ensure the card fills the reserved space */}
+                  <div className="h-full rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-5 shadow-sm backdrop-blur-sm transition-all hover:bg-white dark:hover:bg-zinc-800/80 hover:border-accent/40 hover:shadow-md cursor-pointer">
                     <div className="mb-2 flex items-center justify-between gap-4">
                       <div className="flex items-center gap-3 min-w-0">
                         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
