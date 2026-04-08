@@ -3,8 +3,6 @@ import { services } from "#site/content";
 import { MDXContent } from "@/components/mdx-content";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
-import { Footer } from "@/components/Footer";
-
 interface ServicePageProps {
   params: {
     slug: string;
@@ -39,8 +37,6 @@ export default function ServicePage({ params }: ServicePageProps) {
           <MDXContent code={service.body} />
         </div>
       </article>
-
-      <Footer />
     </main>
   );
 }

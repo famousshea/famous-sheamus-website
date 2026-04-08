@@ -11,19 +11,42 @@ const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+// Custom Sketchy Reddit Icon (Snoo) - Scaled Up
+const RedditIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <circle cx="3.5" cy="14" r="1.75" />
+    <circle cx="20.5" cy="14" r="1.75" />
+    <ellipse cx="12" cy="14" rx="8" ry="5.5" />
+    <path d="M12 8.5v-5h3.5" />
+    <circle cx="16.5" cy="3.5" r="1.25" />
+    <circle cx="9" cy="14" r="1" fill="currentColor" stroke="none" />
+    <circle cx="15" cy="14" r="1" fill="currentColor" stroke="none" />
+    <path d="M9 16.5c1.5 1.5 4.5 1.5 6 0" />
+  </svg>
+);
+
 const SOCIAL_LINKS = [
   { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/sheamus-byrne/", color: "hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5]" },
   { name: "X / Twitter", icon: XIcon, href: "https://x.com/famousshea", color: "hover:bg-black hover:text-white hover:border-black dark:hover:bg-zinc-800" },
   { name: "GitHub", icon: Github, href: "https://github.com/famousshea", color: "hover:bg-zinc-900 hover:text-white hover:border-zinc-900 dark:hover:bg-zinc-800" },
+  { name: "Reddit", icon: RedditIcon, href: "https://www.reddit.com/user/FamousSheamusAI/", color: "hover:bg-[#FF4500] hover:text-white hover:border-[#FF4500]" },
 ];
 
 export default function ContactPage() {
   return (
-    <main className="relative min-h-screen pt-32 pb-48 overflow-hidden">
+    <main className="relative min-h-screen pt-32 pb-48 overflow-hidden bg-canvas">
       <TopNav />
       {/* Background Vignette */}
       <div className="vignette fixed inset-0 pointer-events-none" />
-      
+
       <div className="container relative mx-auto px-6 max-w-5xl">
         {/* Header Section */}
         <section className="mb-16">
@@ -70,7 +93,7 @@ export default function ContactPage() {
             <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Social Intelligence</h2>
             <div className="flex flex-col gap-3">
               {SOCIAL_LINKS.map((social) => (
-                <a 
+                <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
@@ -94,11 +117,11 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold tracking-tight mb-2">Schedule a Strategy Call</h2>
             <p className="text-zinc-500">Select a time below for a 30-minute discovery session.</p>
           </div>
-          
+
           <div className="w-full">
             <div className="tidycal-embed" data-path="sheamus/30-minute-meeting" />
-            <Script 
-              src="https://asset-tidycal.b-cdn.net/js/embed.js" 
+            <Script
+              src="https://asset-tidycal.b-cdn.net/js/embed.js"
               strategy="afterInteractive"
             />
           </div>
