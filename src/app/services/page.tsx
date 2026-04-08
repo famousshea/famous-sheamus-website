@@ -7,52 +7,80 @@ import { ArrowRight } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 
 export default function ServicesPage() {
+  // Sort by defined order
+  const sortedServices = [...services].sort((a, b) => (a.order || 99) - (b.order || 99));
+
+  // Split into Featured (Top) and Standard (Grid)
+  const featuredServices = sortedServices.filter(s => s.isFeatured);
+  const standardServices = sortedServices.filter(s => !s.isFeatured);
+
   return (
-    <main className="relative min-h-screen pt-32 pb-24 overflow-hidden">
+    <main className="relative min-h-screen pt-32 pb-24 bg-canvas">
       <TopNav />
       <ContactBadge />
-      
-      <div className="vignette fixed inset-0 pointer-events-none" />
-      
-      <div className="container relative mx-auto px-6 max-w-4xl">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-          Intelligent <span className="text-accent underline decoration-4 underline-offset-8">Offerings</span>
-        </h1>
-        <p className="text-xl text-zinc-500 mb-12">Enhancing your existing workflows with AI and automation.</p>
 
-        <div className="relative border-s border-border pl-8 space-y-12">
-          {services.map((service, index) => {
-             const IconComponent = (LucideIcons as any)[service.icon || "Bot"] || LucideIcons.Bot;
-             return (
-              <div key={service.slug} className="relative">
-                {/* Timeline Dot */}
-                <span className="absolute -left-[41px] top-4 flex h-5 w-5 items-center justify-center rounded-full bg-background ring-4 ring-background">
-                  <span className="h-2.5 w-2.5 rounded-full bg-accent animate-pulse" />
-                </span>
-                
-                <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm transition-all hover:border-accent/50 hover:bg-white dark:hover:bg-zinc-900 shadow-sm group">
-                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-                    <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-                        <IconComponent className="h-6 w-6 text-accent" />
-                      </div>
-                      <h3 className="text-2xl font-bold group-hover:text-accent transition-colors">{service.title}</h3>
-                    </div>
-                  </div>
-                  
-                  <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6 text-lg">
-                    {service.description}
-                  </p>
+      <div className="container relative mx-auto px-6 max-w-5xl">
+        <header className="mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Scale Revenue, <span className="text-accent underline decoration-4 underline-offset-8">Not Chaos</span>
+          </h1>
+          <p className="text-xl text-zinc-500">
+            Fractional CTO infrastructure that decouples growth from headcount.
+          </p>
+        </header>
 
-                  <Link href={service.permalink} className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors">
-                    Explore This Service <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
+        {/* FEATURED SECTION: Spans full 2-column width */}
+        <div className="space-y-8 mb-12">
+          {featuredServices.map((service) => (
+            <ServiceCard key={service.slug} service={service} isFeatured={true} />
+          ))}
+        </div>
+
+        {/* GRID SECTION: 2 Columns for standard services */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {standardServices.map((service) => (
+            <ServiceCard key={service.slug} service={service} isFeatured={false} />
+          ))}
         </div>
       </div>
     </main>
+  );
+}
+
+// Reusable Card Component to keep code clean
+function ServiceCard({ service, isFeatured }: { service: any; isFeatured: boolean }) {
+  const IconComponent = (LucideIcons as any)[service.icon || "Bot"] || LucideIcons.Bot;
+
+  return (
+    <Link
+      href={service.permalink}
+      className={`group relative flex flex-col justify-between rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm transition-all hover:border-accent/50 hover:shadow-xl ${isFeatured ? "md:flex-row md:items-center gap-8 border-accent/20 ring-1 ring-accent/5" : ""
+        }`}
+    >
+      <div className={isFeatured ? "md:max-w-2xl" : ""}>
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 mb-6">
+          <IconComponent className="h-6 w-6 text-accent" />
+        </div>
+
+        <h3 className={`font-bold group-hover:text-accent transition-colors mb-3 ${isFeatured ? "text-3xl" : "text-xl"
+          }`}>
+          {service.title}
+        </h3>
+
+        <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+          {service.description}
+        </p>
+
+        <div className="inline-flex items-center gap-2 text-sm font-semibold text-accent">
+          View Solution <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </div>
+      </div>
+
+      {isFeatured && (
+        <div className="hidden md:block opacity-10 group-hover:opacity-20 transition-opacity">
+          <IconComponent size={120} strokeWidth={1} className="text-accent" />
+        </div>
+      )}
+    </Link>
   );
 }

@@ -24,6 +24,8 @@ const services = {
       title: s.string().max(99),
       slug: s.path(),
       description: s.string(),
+      isFeatured: s.boolean().default(false),
+      order: s.number(),
       icon: s.string().optional(),
       body: s.mdx(),
     })
