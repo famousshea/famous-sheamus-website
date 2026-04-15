@@ -1,42 +1,45 @@
 import React from "react";
+import Image from "next/image";
 
 export function ProfileAvatar() {
   return (
-    <div className="relative h-64 w-64 md:h-80 md:w-80 lg:h-96 lg:w-96">
-      {/* Decorative background glow */}
-      <div className="absolute inset-0 bg-accent/20 blur-3xl rounded-full" />
-      
-      {/* Avatar Container */}
-      <div className="relative h-full w-full overflow-hidden rounded-2xl border-4 border-white dark:border-zinc-800 shadow-2xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-        {/* Placeholder High-Quality Avatar Icon */}
-        <div className="flex flex-col items-center gap-4 text-zinc-400 dark:text-zinc-500">
-          <svg
-            className="h-32 w-32 md:h-40 md:w-40"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1}
-              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-            />
-          </svg>
-          <span className="text-xs font-bold uppercase tracking-widest opacity-50">
-            Professional Avatar
-          </span>
+    /* Increased dimensions for a commanding presence */
+    <div className="relative h-96 w-full md:h-[35rem] md:w-[30rem] lg:h-[40rem] lg:w-[35rem] group">
+
+      {/* 1. Subtle Brand Glow: Reinforces the Teal/Mint palette */}
+      <div className="absolute inset-0 bg-teal-500/10 blur-[100px] rounded-full group-hover:bg-mint-400/15 transition-colors duration-500" />
+
+      {/* 2. Rounded Container: Matches the "Bento-Grid" service layout */}
+      <div className="relative h-full w-full overflow-hidden rounded-3xl border border-zinc-200/50 dark:border-zinc-800/50 shadow-2xl bg-white dark:bg-zinc-950">
+
+        {/* 3. The Mask: Keeping a subtle bottom fade so the transition isn't jarring */}
+        <div
+          className="relative h-full w-full"
+          style={{
+            maskImage: "linear-gradient(to bottom, black 85%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 85%, transparent 100%)",
+          }}
+        >
+          {/* 4. Next.js Optimized Image: Fast load times for GEO dominance */}
+          <Image
+            src="/images/sheamus-suit03.jpeg"
+            alt="Sheamus, Fractional CTO specializing in AI automation for SMBs"
+            fill
+            priority
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+          />
         </div>
       </div>
-      
-      {/* Floating Status Badge */}
-      <div className="absolute -bottom-4 -right-4 flex items-center gap-2 rounded-full bg-white dark:bg-zinc-900 px-4 py-2 shadow-lg border border-border">
-        <span className="relative flex h-3 w-3">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-          <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+
+      {/* 5. ROI-Focused Status Badge: A high-trust professionalism signal */}
+      <div className="absolute -bottom-4 -right-4 flex items-center gap-2 rounded-full bg-white dark:bg-zinc-900 px-4 py-2 shadow-2xl border border-teal-500/30 z-10">
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-500"></span>
         </span>
-        <span className="text-xs font-bold text-zinc-600 dark:text-zinc-300 uppercase letter tracking-tighter">
-          Available for Hire
+        <span className="text-[10px] font-bold text-zinc-600 dark:text-zinc-300 uppercase tracking-tighter">
+          SYSTEMS STATUS: ONLINE
         </span>
       </div>
     </div>
