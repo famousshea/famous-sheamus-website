@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
@@ -145,7 +145,18 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
-        <GoogleAnalytics gaId="G-MDF6DDLEE0" />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-MDF6DDLEE0`}
+          strategy="lazyOnload"
+        />
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MDF6DDLEE0');
+          `}
+        </Script>
       </body>
     </html>
   );

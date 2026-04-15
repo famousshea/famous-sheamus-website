@@ -22,10 +22,11 @@ export function ProfileAvatar() {
         >
           {/* 4. Next.js Optimized Image: Fast load times for GEO dominance */}
           <Image
-            src="/images/sheamus-suit03.jpeg"
+            src="/images/sheamus-suit03.webp"
             alt="Sheamus, Fractional CTO specializing in AI automation for SMBs"
             fill
             priority
+            decoding="async"
             className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
           />
