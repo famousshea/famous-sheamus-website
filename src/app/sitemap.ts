@@ -44,11 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // 3. Dynamic Blog pages
+  // Dynamic Blog pages
   const blogPages = blogs.map((blog) => ({
     url: `${baseUrl}${blog.permalink}`,
-    // Using the actual markdown file's edit date is most accurate for SEO
-    lastModified: getFileTimestamp(blog.filePath),
+    // Use the date you manually set in your markdown file
+    lastModified: new Date(blog.date),
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }));
