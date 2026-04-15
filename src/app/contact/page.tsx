@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 import { TopNav } from "@/components/TopNav";
 import { Linkedin, Github, Mail, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Script from "next/script";
+import { TidyCalEmbed } from "@/components/TidyCalEmbed";
 
 // Custom SVG for X logo
 const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -129,11 +129,7 @@ export default function ContactPage() {
           </div>
 
           <div className="w-full">
-            <div className="tidycal-embed" data-path="sheamus/30-minute-meeting" />
-            <Script
-              src="https://asset-tidycal.b-cdn.net/js/embed.js"
-              strategy="afterInteractive"
-            />
+            <TidyCalEmbed />
           </div>
         </section>
       </div>
