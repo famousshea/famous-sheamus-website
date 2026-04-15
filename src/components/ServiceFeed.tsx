@@ -4,7 +4,33 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { services } from "#site/content";
-import * as LucideIcons from "lucide-react";
+import { 
+  ShieldCheck, 
+  Bot, 
+  MessageSquareCode, 
+  Share2, 
+  Server, 
+  Workflow, 
+  Briefcase, 
+  Target, 
+  PhoneCall, 
+  ScanSearch, 
+  Database 
+} from "lucide-react";
+
+const ICON_MAP: Record<string, React.ElementType> = {
+  MessageSquareCode,
+  Share2,
+  Server,
+  Workflow,
+  Briefcase,
+  Target,
+  PhoneCall,
+  ScanSearch,
+  Database,
+  ShieldCheck,
+  Bot
+};
 
 export function ServiceFeed() {
   // 1. Updated Logic: Finding the specific service by a more flexible slug match
@@ -52,7 +78,7 @@ export function ServiceFeed() {
           <div className="h-full rounded-2xl border-2 border-blue-500 bg-blue-50/50 dark:bg-blue-900/20 p-5 shadow-lg backdrop-blur-sm transition-all hover:scale-[1.02]">
             <div className="mb-2 flex items-center gap-3">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white">
-                <LucideIcons.ShieldCheck className="h-4 w-4" />
+                <ShieldCheck className="h-4 w-4" />
               </div>
               <span className="text-[10px] font-black text-blue-700 dark:text-blue-300 uppercase tracking-widest">
                 Primary Strategy
@@ -71,7 +97,7 @@ export function ServiceFeed() {
       {/* --- SCROLLING REMAINING CARDS --- */}
       <AnimatePresence mode="popLayout" initial={false}>
         {visibleScrolling.map((service) => {
-          const IconComponent = (LucideIcons as any)[service.icon || "Bot"] || LucideIcons.Bot;
+          const IconComponent = ICON_MAP[service.icon || "Bot"] || Bot;
           return (
             <motion.div
               key={service.slug}
