@@ -13,7 +13,11 @@ const blogs = {
       published: s.boolean().default(true),
       body: s.mdx(),
     })
-    .transform((data) => ({ ...data, permalink: `/blog/${data.slug.split("/").pop()}` })),
+    .transform((data) => ({
+      ...data,
+      permalink: `/blog/${data.slug.split("/").pop()}`,
+      filePath: `content/${data.slug}.mdx`,
+    })),
 };
 
 const services = {
@@ -29,7 +33,11 @@ const services = {
       icon: s.string().optional(),
       body: s.mdx(),
     })
-    .transform((data) => ({ ...data, permalink: `/services/${data.slug.split("/").pop()}` })),
+    .transform((data) => ({
+      ...data,
+      permalink: `/services/${data.slug.split("/").pop()}`,
+      filePath: `content/${data.slug}.mdx`,
+    })),
 };
 
 export default defineConfig({
