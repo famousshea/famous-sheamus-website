@@ -5,7 +5,6 @@ const mainLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/case-studies", label: "Case Studies" },
-  { href: "/stack", label: "Tech Stack" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];

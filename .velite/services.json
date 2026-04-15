@@ -1,6 +1,6 @@
 [
   {
-    "title": "AI Chatbot & Assistant Development",
+    "title": "AI Chatbot & Assistant Development For Modern Business",
     "slug": "services/ai-chatbot-development",
     "description": "Custom AI chatbots and internal knowledge assistants that handle customer inquiries, qualify leads, and surface institutional knowledge — deployed on your website, Slack, or Teams.",
     "isFeatured": false,
@@ -11,7 +11,7 @@
     "filePath": "content/services/ai-chatbot-development.mdx"
   },
   {
-    "title": "AI Implementation Consulting",
+    "title": "Strategic AI Implementation & Fractional CTO Services",
     "slug": "services/ai-consulting",
     "description": "Fractional CTO services and strategic AI implementation that eliminates operational chaos and scales revenue without adding headcount.",
     "isFeatured": true,
@@ -22,7 +22,7 @@
     "filePath": "content/services/ai-consulting.mdx"
   },
   {
-    "title": "AI-Powered Lead Capture",
+    "title": "AI-Powered Lead Capture & Automated Qualification System",
     "slug": "services/ai-lead-capture",
     "description": "Multi-channel lead qualification that captures, scores, and routes prospects 24/7 — turning missed inquiries into booked revenue.",
     "isFeatured": false,
@@ -33,7 +33,7 @@
     "filePath": "content/services/ai-lead-capture.mdx"
   },
   {
-    "title": "CRM Integration & Data Pipelines",
+    "title": "Enterprise CRM Integration & Real-Time Data Pipelines",
     "slug": "services/crm-integration",
     "description": "Connecting your disconnected business systems into unified, real-time data flows — so every team works from one source of truth.",
     "isFeatured": false,
@@ -44,7 +44,7 @@
     "filePath": "content/services/crm-integration.mdx"
   },
   {
-    "title": "N8N Workflow Automation",
+    "title": "Custom N8N Workflow Automation For Scale & Efficiency",
     "slug": "services/n8n-workflow-automation",
     "description": "Custom, self-hosted multi-step automations connecting your tools to eliminate repetitive tasks while keeping costs transparent and data secure.",
     "isFeatured": false,
@@ -55,7 +55,7 @@
     "filePath": "content/services/n8n-workflow-automation.mdx"
   },
   {
-    "title": "Process Analysis & Optimization",
+    "title": "Workflow Process Analysis & Cost Optimization Strategy",
     "slug": "services/process-optimization",
     "description": "Comprehensive workflow audits that identify operational bottlenecks, quantify inefficiencies, and deliver a clear automation roadmap with ROI projections.",
     "isFeatured": false,
@@ -66,7 +66,7 @@
     "filePath": "content/services/process-optimization.mdx"
   },
   {
-    "title": "Social Media Automation",
+    "title": "AI Social Media Automation For Consistent Brand Growth",
     "slug": "services/social-media-automation",
     "description": "AI-powered content engines that autonomously create, schedule, and publish high-quality posts across LinkedIn, X, and Facebook — without adding to your workload.",
     "isFeatured": false,
@@ -77,7 +77,7 @@
     "filePath": "content/services/social-media-automation.mdx"
   },
   {
-    "title": "System Architecture Design",
+    "title": "End-to-End System Architecture Design & Cloud Strategy",
     "slug": "services/system-architecture",
     "description": "End-to-end technical infrastructure design for growing businesses — from cloud strategy and API architecture to database planning and security compliance.",
     "isFeatured": false,

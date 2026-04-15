@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: "Famous Sheamus | Global Fractional CTO & AI Architect",
     template: "%s | Famous Sheamus"
   },
-  description: "Famous Sheamus: AI Implementation Consultant & Fractional CTO with Global Capability. Based in Dallas, TX, serving enterprises worldwide. Available for on-site international audits and AI strategy.",
+  description: "Global Fractional CTO & AI Architect. Scaling enterprises worldwide through agnostic AI implementation and automation strategy. Scale Revenue, Not Chaos.",
   keywords: ["Fractional CTO Dallas", "Global AI Consultant", "Fractional CTO Worldwide", "AI Implementation Audit", "Enterprise AI Strategy", "n8n workflow architect", "Voice AI for Home Services", "automation business scaling"],
   // Favicon configuration
   icons: {

@@ -10,9 +10,9 @@ export const TrustStack = () => {
   return (
     <div className="py-12 border-y border-black/5 dark:border-white/5 bg-white/5 backdrop-blur-sm rounded-3xl mb-24">
       <div className="text-center mb-8">
-        <h3 className="text-sm font-semibold uppercase tracking-widest text-primary/60">
+        <h2 className="text-sm font-semibold uppercase tracking-widest text-primary/60">
           Strategic Technical Stack
-        </h3>
+        </h2>
       </div>
       <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
         {partners.map((partner) => (

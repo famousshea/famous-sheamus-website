@@ -55,7 +55,8 @@ export default function Home() {
           </aside>
 
           {/* Right Column (Service Feed) */}
-          <section className="lg:col-span-4 flex justify-end order-3">
+          <section className="lg:col-span-4 flex flex-col items-end order-3">
+            <h2 className="sr-only">Our Services</h2>
             <ServiceFeed />
           </section>
 

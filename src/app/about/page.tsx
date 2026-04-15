@@ -3,7 +3,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "About Sheamus | Global Fractional CTO & AI Architect",
-  description: "Learn about Sheamus, a Dallas-based Fractional CTO with a worldwide reach. Decades of experience in technology leadership, system architecture, and AI integration for global enterprises.",
+  description: "Learn about Sheamus, a Fractional CTO and AI Architect. Decades of experience in technology leadership and AI integration for global enterprises worldwide.",
   alternates: {
     canonical: '/about',
   },

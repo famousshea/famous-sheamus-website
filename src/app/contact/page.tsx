@@ -3,7 +3,7 @@ import React from "react";
 
 export const metadata: Metadata = {
   title: "Contact Famous Sheamus | Worldwide AI Strategy Audits",
-  description: "Connect with Famous Sheamus for a worldwide AI audit and fractional CTO strategy. Based in Dallas, serving global enterprises with AI implementation and automation.",
+  description: "Connect with Famous Sheamus for a global AI audit and fractional CTO strategy. Serving enterprises worldwide with AI implementation and automation roadmap.",
   alternates: {
     canonical: '/contact',
   },
