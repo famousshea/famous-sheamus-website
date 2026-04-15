@@ -1,7 +1,7 @@
 import React from "react";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
-import { ImageIcon } from "lucide-react";
+import AboutCarousel from "@/components/AboutCarousel";
 
 export default function AboutPage() {
   return (
@@ -13,7 +13,7 @@ export default function AboutPage() {
 
       <div className="container relative mx-auto px-6 max-w-4xl">
 
-        {/* Header Row: Title + Photo Placeholder */}
+        {/* Header Row: Title + Carousel */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -24,13 +24,9 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Photo Placeholder */}
-          <div className="flex items-center justify-center rounded-3xl border-2 border-dashed border-border bg-white/30 dark:bg-zinc-900/30 backdrop-blur-sm h-64 md:h-72 group hover:border-accent/50 transition-colors duration-300">
-            <div className="flex flex-col items-center gap-3 text-zinc-400 group-hover:text-accent transition-colors">
-              <ImageIcon className="h-10 w-10" strokeWidth={1.5} />
-              <p className="text-sm font-medium tracking-wide">Photo Coming Soon</p>
-              <p className="text-xs text-zinc-400">Replace with your image asset</p>
-            </div>
+          {/* Rotating Photo Carousel */}
+          <div className="flex items-center justify-center w-full relative">
+            <AboutCarousel />
           </div>
         </div>
 
