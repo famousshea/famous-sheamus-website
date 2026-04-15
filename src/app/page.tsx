@@ -5,9 +5,24 @@ import { RollingMarquee } from "@/components/RollingMarquee";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Famous Sheamus | AI Implementation Consultant & Fractional CTO",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-title", ".hero-description"]
+  },
+  "url": "https://famoussheamus.com"
+};
+
 export default function Home() {
   return (
     <main className="relative min-h-screen pt-32 pb-24 overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <TopNav />
       <ContactBadge />
       
@@ -19,26 +34,26 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column (Greeting) */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          <article className="lg:col-span-5 order-2 lg:order-1">
             <HeroGreeting />
-          </div>
+          </article>
 
           {/* Center Column (Avatar) */}
-          <div className="lg:col-span-3 flex justify-center order-1 lg:order-2">
+          <aside className="lg:col-span-3 flex justify-center order-1 lg:order-2">
             <ProfileAvatar />
-          </div>
+          </aside>
 
           {/* Right Column (Service Feed) */}
-          <div className="lg:col-span-4 flex justify-end order-3">
+          <section className="lg:col-span-4 flex justify-end order-3">
             <ServiceFeed />
-          </div>
+          </section>
 
         </div>
 
         {/* Rolling Marquee (Bottom) */}
-        <div className="mt-24 lg:mt-32">
+        <section className="mt-24 lg:mt-32">
           <RollingMarquee />
-        </div>
+        </section>
       </div>
     </main>
   );

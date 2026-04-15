@@ -54,14 +54,14 @@ export function HeroGreeting() {
   return (
     <div className="flex flex-col gap-6 max-w-lg">
       <div className="space-y-2">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground relative py-2">
+        <h1 className="hero-title text-5xl md:text-7xl font-bold tracking-tight text-foreground relative py-2">
           Hello, I'm <br />
           <span className="relative">
             Sheamus.
             <div className="absolute -bottom-2 left-0 h-2 w-full bg-accent/20 rounded-full -rotate-1" />
           </span>
         </h1>
-        <p className="text-xl md:text-2xl font-medium text-zinc-500 dark:text-zinc-400">
+        <p className="hero-description text-xl md:text-2xl font-medium text-zinc-500 dark:text-zinc-400">
           Fractional CTO and <span className="text-accent underline decoration-4 underline-offset-8">AI Implementation Consultant</span>
         </p>
       </div>

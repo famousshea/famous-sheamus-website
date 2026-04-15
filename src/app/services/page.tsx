@@ -14,8 +14,29 @@ export default function ServicesPage() {
   const featuredServices = sortedServices.filter(s => s.isFeatured);
   const standardServices = sortedServices.filter(s => !s.isFeatured);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Famous Sheamus Consulting Services",
+    "description": "Comprehensive AI automation and Fractional CTO services for revenue scaling.",
+    "itemListElement": sortedServices.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.description,
+        "url": `https://famoussheamus.com${service.permalink}`
+      }
+    }))
+  };
+
   return (
     <main className="relative min-h-screen pt-32 pb-24 bg-canvas">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <TopNav />
       <ContactBadge />
 
@@ -30,18 +51,18 @@ export default function ServicesPage() {
         </header>
 
         {/* FEATURED SECTION: Spans full 2-column width */}
-        <div className="space-y-8 mb-12">
+        <section className="space-y-8 mb-12">
           {featuredServices.map((service) => (
             <ServiceCard key={service.slug} service={service} isFeatured={true} />
           ))}
-        </div>
+        </section>
 
         {/* GRID SECTION: 2 Columns for standard services */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {standardServices.map((service) => (
             <ServiceCard key={service.slug} service={service} isFeatured={false} />
           ))}
-        </div>
+        </section>
       </div>
     </main>
   );

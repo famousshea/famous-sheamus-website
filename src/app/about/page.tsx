@@ -14,7 +14,7 @@ export default function AboutPage() {
       <div className="container relative mx-auto px-6 max-w-4xl">
 
         {/* Header Row: Title + Carousel */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
+        <header className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
               About <span className="text-accent underline decoration-4 underline-offset-8">Sheamus</span>
@@ -28,18 +28,18 @@ export default function AboutPage() {
           <div className="flex items-center justify-center w-full relative">
             <AboutCarousel />
           </div>
-        </div>
+        </header>
 
         {/* Philosophy + Core Skills Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <article className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
             <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Philosophy</span>
             <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
               My approach is simple: No new software to learn, just pure efficiency. I specialize in building unseen, resilient architectures that work invisibly in the background.
             </p>
-          </div>
+          </article>
 
-          <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
+          <article className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
             <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Core Skills</span>
             <ul className="space-y-3 text-zinc-600 dark:text-zinc-400">
               <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Technology Leadership</li>
@@ -49,19 +49,19 @@ export default function AboutPage() {
               <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Voice AI</li>
               <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Process Analysis &amp; Optimization</li>
             </ul>
-          </div>
-        </div>
+          </article>
+        </section>
 
         {/* Full-Width Background Section */}
-        <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm mb-8">
+        <section className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm mb-8">
           <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Background</span>
           <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
             With over a decade of experience in the technology sector, my journey has evolved from foundational roles in IT support and systems engineering to leading strategic software initiatives and implementation of automated systems. I&apos;ve spent years building robust infrastructures and managing complex operations for companies like prototype:IT and Makeready, eventually specializing in AI-driven automation to bridge the gap between technical complexity and scalable business growth.
           </p>
-        </div>
+        </section>
 
         {/* Full-Width Personal Life Section */}
-        <div className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm">
+        <section className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm">
           <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Personal Life</span>
           <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
             Outside of the keyboard, I&apos;m driven by the same spirit of exploration that defines my work. I&apos;m an avid traveler with a deep passion for experiencing new cultures, cuisines, and landscapes — the world is too vast to see from a desk. I love cooking for others, treating the kitchen as another system to master and a way to bring people together. When I&apos;m not at sea, you&apos;ll find me in the outdoors — hiking, camping, and generally embracing whatever terrain is available. Video games are a constant companion, equal parts creative outlet and competitive arena. But the north star of it all is sailing. My ultimate ambition is to circumnavigate the globe on my own vessel — the most demanding and rewarding systems challenge I can imagine.
@@ -86,7 +86,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
       </div>
     </main>

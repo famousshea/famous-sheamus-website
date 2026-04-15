@@ -55,9 +55,18 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Famous Sheamus Consulting",
+  "alternateName": "Famous Sheamus",
   "@id": "https://famoussheamus.com/#organization",
   "url": "https://famoussheamus.com",
-  "image": "https://famoussheamus.com/images/og-main.png", // Add your logo URL
+  "logo": "https://famoussheamus.com/images/logo-blue-wash.png",
+  "image": "https://famoussheamus.com/images/og-main.png",
+  "sameAs": [
+    "https://www.linkedin.com/in/sheamus-byrne/",
+    "https://x.com/famousshea",
+    "https://github.com/famousshea",
+    "https://www.reddit.com/user/FamousSheamusAI/"
+  ],
+  "description": "Dallas-based AI architect and Fractional CTO building resilient automated systems and providing technical leadership for high-growth SMBs.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Dallas",
@@ -69,9 +78,30 @@ const jsonLd = {
     "@type": "Person",
     "@id": "https://famoussheamus.com/#sheamus",
     "name": "Sheamus",
-    "jobTitle": ["Fractional CTO", "Automation Strategist"]
+    "jobTitle": ["Fractional CTO", "Automation Strategist"],
+    "url": "https://famoussheamus.com/about"
   },
-  "areaServed": "Worldwide",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Worldwide"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "url": "https://famoussheamus.com/contact"
+  },
   "knowsAbout": [
     "Artificial Intelligence",
     "Enterprise Architecture",
@@ -80,13 +110,17 @@ const jsonLd = {
     "Process Optimization",
     "SaaS Bloat Reduction",
     "AI Implementation Consultant",
-    "Fractional CTO"
+    "Fractional CTO",
+    "Business Process Automation",
+    "Predictive Analytics",
+    "Legacy System Migration"
   ],
   "offers": {
     "@type": "Offer",
     "itemOffered": {
       "@type": "Service",
-      "name": "Fractional CTO & Automation Strategy"
+      "name": "Fractional CTO & Automation Strategy",
+      "description": "High-level technology leadership and AI implementation strategy to decouple revenue growth from headcount."
     }
   }
 };
