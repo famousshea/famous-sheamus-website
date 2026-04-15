@@ -4,6 +4,7 @@ import { ServiceFeed } from "@/components/ServiceFeed";
 import { RollingMarquee } from "@/components/RollingMarquee";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
+import { TrustStack } from "@/components/TrustStack";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -50,8 +51,9 @@ export default function Home() {
 
         </div>
 
-        {/* Rolling Marquee (Bottom) */}
+        {/* Global Trust & Marquee */}
         <section className="mt-24 lg:mt-32">
+          <TrustStack />
           <RollingMarquee />
         </section>
       </div>

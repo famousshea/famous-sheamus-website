@@ -2,6 +2,7 @@ import React from "react";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
 import AboutCarousel from "@/components/AboutCarousel";
+import { TrustStack } from "@/components/TrustStack";
 
 export default function AboutPage() {
   return (
@@ -86,6 +87,11 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Global Trust Stack */}
+        <section className="mt-24">
+          <TrustStack />
         </section>
 
       </div>

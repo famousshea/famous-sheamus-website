@@ -17,6 +17,33 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: BlogPageProps) {
+  const blog = blogs.find((blog) => blog.slug.split("/").pop() === params.slug);
+  if (!blog) return {};
+
+  return {
+    title: blog.title,
+    description: blog.description,
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      type: "article",
+      publishedTime: blog.date,
+      authors: ["Sheamus"],
+      images: [
+        {
+          url: `https://famoussheamus.com/images/og-main.png`, // Fallback or dynamic image if available
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.description,
+    },
+  };
+}
+
 export default function BlogPage({ params }: BlogPageProps) {
   // Find the blog using the slug
   const blog = blogs.find((blog) => blog.slug.split("/").pop() === params.slug);
@@ -25,8 +52,38 @@ export default function BlogPage({ params }: BlogPageProps) {
     notFound();
   }
 
+  // Generate Article and FAQ Schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blog.title,
+    "description": blog.description,
+    "datePublished": blog.date,
+    "author": {
+      "@type": "Person",
+      "name": "Sheamus",
+      "url": "https://famoussheamus.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Famous Sheamus Consulting",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://famoussheamus.com/images/logo-blue-wash.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://famoussheamus.com${blog.permalink}`
+    }
+  };
+
   return (
     <main className="min-h-screen pt-32 pb-48 px-4 overflow-hidden relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <TopNav />
       <ContactBadge />
       <article className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700">

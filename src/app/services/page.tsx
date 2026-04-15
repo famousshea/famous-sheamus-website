@@ -5,6 +5,7 @@ import { services } from "#site/content";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import * as LucideIcons from "lucide-react";
+import { TrustStack } from "@/components/TrustStack";
 
 export default function ServicesPage() {
   // Sort by defined order
@@ -62,6 +63,11 @@ export default function ServicesPage() {
           {standardServices.map((service) => (
             <ServiceCard key={service.slug} service={service} isFeatured={false} />
           ))}
+        </section>
+
+        {/* Global Trust Stack */}
+        <section className="mt-24">
+          <TrustStack />
         </section>
       </div>
     </main>
