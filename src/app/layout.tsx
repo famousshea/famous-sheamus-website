@@ -12,9 +12,42 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Famous Sheamus | AI Implementation Consultant & Fractional CTO",
+  metadataBase: new URL('https://famoussheamus.com'),
+  title: {
+    default: "Famous Sheamus | AI Implementation Consultant & Fractional CTO",
+    template: "%s | Famous Sheamus Consulting"
+  },
   description: "Scale Revenue, Not Chaos. Dallas-based AI architect building resilient automated systems and providing fractional technical leadership for high-growth SMBs.",
   keywords: ["Fractional CTO Dallas", "AI Implementation Consultant", "n8n workflow architect", "Voice AI for Home Services", "automation business scaling"],
+  // Favicon configuration
+  icons: {
+    icon: "/images/logo-blue-wash.png",
+    shortcut: "/images/logo-blue-wash.png",
+    apple: "/images/logo-blue-wash.png",
+  },
+  // Open Graph (Thumbnail) configuration
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://famoussheamus.com',
+    siteName: 'Famous Sheamus Consulting',
+    title: 'Famous Sheamus | Fractional CTO & AI Strategy',
+    description: 'Scale Revenue, Not Chaos. Agnostic AI and automation solutions for high-growth SMBs.',
+    images: [
+      {
+        url: '/images/og-main.png', // Thumnail image
+        width: 1200,
+        height: 630,
+        alt: 'Famous Sheamus Consulting - Scale Revenue, Not Chaos',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Famous Sheamus | Fractional CTO',
+    description: 'Decoupling revenue from headcount with agnostic AI infrastructure.',
+    images: ['/images/og-main.png'],
+  },
 };
 
 // Nested JSON-LD for superior AI indexing
