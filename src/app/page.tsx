@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import { HeroGreeting } from "@/components/HeroGreeting";
+
+export const metadata: Metadata = {
+  title: "Famous Sheamus | Global AI Consultant & Fractional CTO",
+  description: "Famous Sheamus is a Fractional CTO and AI Implementation Architect with global capability. We replace operational chaos with AI-driven precision for high-growth businesses worldwide.",
+  alternates: {
+    canonical: '/',
+  },
+};
+
 import { ProfileAvatar } from "@/components/ProfileAvatar";
 import { ServiceFeed } from "@/components/ServiceFeed";
 import { RollingMarquee } from "@/components/RollingMarquee";

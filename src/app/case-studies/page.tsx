@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Case Studies | Famous Sheamus | Implementation Results",
+  description: "Explore real-world results from Famous Sheamus. See how our global AI consultant strategies and n8n automations have saved hours and driven growth for international clients.",
+  alternates: {
+    canonical: '/case-studies',
+  },
+};
+
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
 

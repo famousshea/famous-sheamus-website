@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "AI Services | Famous Sheamus | Global Fractional CTO",
+  description: "Scale your revenue, not chaos. Discover our fractional CTO and AI automation services available for high-growth businesses and enterprises worldwide.",
+  alternates: {
+    canonical: '/services',
+  },
+};
+
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
 import { services } from "#site/content";

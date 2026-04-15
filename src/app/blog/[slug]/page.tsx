@@ -3,7 +3,6 @@ import { blogs } from "#site/content";
 import { MDXContent } from "@/components/mdx-content";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
-import { Footer } from "@/components/Footer";
 
 interface BlogPageProps {
   params: {
@@ -22,12 +21,16 @@ export async function generateMetadata({ params }: BlogPageProps) {
   if (!blog) return {};
 
   return {
+    alternates: {
+      canonical: blog.permalink,
+    },
     title: blog.title,
     description: blog.description,
     openGraph: {
       title: blog.title,
       description: blog.description,
       type: "article",
+      url: `https://famoussheamus.com${blog.permalink}`,
       publishedTime: blog.date,
       authors: ["Sheamus"],
       images: [
@@ -113,8 +116,6 @@ export default function BlogPage({ params }: BlogPageProps) {
           <MDXContent code={blog.body} />
         </div>
       </article>
-
-      <Footer />
     </main>
   );
 }

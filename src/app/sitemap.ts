@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.famoussheamus.com";
+  const baseUrl = "https://famoussheamus.com";
 
   // Helper to get actual file modification time
   // 'filePath' should be relative to the project root, e.g., 'content/blog/my-post.md'

@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "About Sheamus | Global Fractional CTO & AI Architect",
+  description: "Learn about Sheamus, a Dallas-based Fractional CTO with a worldwide reach. Decades of experience in technology leadership, system architecture, and AI integration for global enterprises.",
+  alternates: {
+    canonical: '/about',
+  },
+};
+
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
 import AboutCarousel from "@/components/AboutCarousel";
@@ -21,7 +31,7 @@ export default function AboutPage() {
               About <span className="text-accent underline decoration-4 underline-offset-8">Sheamus</span>
             </h1>
             <p className="mt-4 text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Fractional CTO. AI Architect. Global-Remote.
+              Fractional CTO. AI Architect with Global Capability.
             </p>
           </div>
 

@@ -14,10 +14,10 @@ export async function GET() {
     .join("\n");
 
   const content = `# Famous Sheamus Consulting
-> Dallas-based AI architect and automation consultancy providing fractional technical leadership for high-growth SMBs.
+> AI Implementation Consultant & Fractional CTO providing technical leadership and automation architecture for high-growth enterprises.
 
 About
-Agnostic AI and automation solutions focused on building resilient automated systems and revenue-scaling frameworks.
+Specialized in building resilient AI systems (n8n, Vapi, OpenAI) and revenue-scaling frameworks. Global Delivery & On-site Consulting available.
 
 Primary Resources
 - (https://famoussheamus.com/llms-full.txt): A comprehensive version of all site content for deep context ingestion.

@@ -17,7 +17,7 @@ As a **Fractional CTO** and **AI Implementation Consultant**, I believe in build
 *   **Velite** (Content layer for MDX processing)
 *   **Lucide Icons** (Visual language)
 
-## 🌐 Global-Remote Status
+## 🌐 Global Capability
 My operations are globally remote, with a focus on delivering high-impact AI strategy and implementation for businesses anywhere in the world.
 
 ---

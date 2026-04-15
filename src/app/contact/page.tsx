@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Contact Famous Sheamus | Worldwide AI Strategy Audits",
+  description: "Connect with Famous Sheamus for a worldwide AI audit and fractional CTO strategy. Based in Dallas, serving global enterprises with AI implementation and automation.",
+  alternates: {
+    canonical: '/contact',
+  },
+};
+
 import { TopNav } from "@/components/TopNav";
 import { Linkedin, Github, Mail, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -79,9 +89,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Location</p>
-                  <p className="text-lg font-medium">Global-Remote</p>
+                  <p className="text-lg font-medium">Dallas-Based / Global Reach</p>
                   <p className="text-sm text-zinc-500 mt-1 max-w-[200px] leading-relaxed">
-                    Available for in-person consultations and strategic retreats anywhere in the world.
+                    Available for worldwide travel for on-site AI audits, implementation, and executive strategy.
                   </p>
                 </div>
               </div>

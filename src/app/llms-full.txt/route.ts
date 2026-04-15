@@ -30,7 +30,7 @@ export async function GET() {
 This document provides a comprehensive overview of Famous Sheamus Consulting, including our core philosophy, services, and technical insights.
 
 ## Core Philosophy: Scale Revenue, Not Chaos
-Famous Sheamus Consulting is a Dallas-based AI architecture firm that provides Fractional CTO services for high-growth SMBs. Our core mandate is "No New Software"—we build invisible, resilient architectures that orchestrate the tools you already own rather than adding to your MarTech bloat. We specialize in decoupling revenue growth from headcount through intelligent automation and agnostic AI integration.
+Famous Sheamus Consulting is an AI Architecture firm providing Fractional CTO services for high-growth enterprises. Specializing in n8n automation, Vapi, OpenAI integrations, and custom LLM infrastructure, we deliver resilient technical leadership and "No New Software" architectures. Global Delivery and On-site Consulting are available worldwide for high-stakes audits and implementation.
 
 ## About Sheamus
 Sheamus is a Fractional CTO and AI Architect with over a decade of experience in the technology sector. His journey evolved from foundational roles in IT support and systems engineering to leading strategic software initiatives and complex operations for companies like prototype:IT and Makeready. He specializes in AI-driven automation using tools like n8n and Large Language Models (LLMs) to bridge the gap between technical complexity and scalable business growth.

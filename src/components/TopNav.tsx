@@ -25,20 +25,20 @@ export function TopNav() {
   return (
     <div className="fixed bottom-10 top-auto md:bottom-auto md:top-10 left-1/2 z-50 flex -translate-x-1/2 items-center max-w-[95vw]">
       {/* Integrated Floating Menu */}
-      <nav 
+      <nav
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="flex h-14 items-center gap-1 md:gap-2 px-4"
+        className="flex h-14 items-center gap-1 md:gap-2 px-4 rounded-full bg-white/20 dark:bg-zinc-950/10 backdrop-blur-md border border-zinc-200/50 dark:border-zinc-800/50 shadow-lg"
       >
         {links.map((link) => (
-          <DockIcon 
-            key={link.label} 
-            link={link} 
-            isActive={pathname === link.href} 
-            mouseX={mouseX} 
+          <DockIcon
+            key={link.label}
+            link={link}
+            isActive={pathname === link.href}
+            mouseX={mouseX}
           />
         ))}
-        
+
         {/* Theme Toggle - Integrated into the same alignment flow */}
         <div className="h-full flex items-center justify-center ml-2 md:ml-4">
           <button
@@ -47,7 +47,7 @@ export function TopNav() {
           >
             <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 group-hover:text-accent" />
             <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 group-hover:text-accent" />
-            
+
             {/* Theme Toggle Tooltip */}
             <span className="absolute -top-12 md:top-full md:mt-2 scale-0 rounded-md border border-border/40 bg-zinc-900/90 dark:bg-zinc-800/90 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase text-white shadow-lg transition-all group-hover:scale-100 z-50 whitespace-nowrap">
               {theme === "dark" ? "Light Mode" : "Dark Mode"}
@@ -69,12 +69,12 @@ function DockIcon({
   isActive: boolean;
 }) {
   const ref = useRef<HTMLAnchorElement>(null);
-  
+
   const distance = useTransform(mouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });
-  
+
   let widthSync = useTransform(distance, [-150, 0, 150], [45, 85, 45]);
   let width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
 

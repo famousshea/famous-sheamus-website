@@ -13,12 +13,15 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://famoussheamus.com'),
-  title: {
-    default: "Famous Sheamus | AI Implementation Consultant & Fractional CTO",
-    template: "%s | Famous Sheamus Consulting"
+  alternates: {
+    canonical: '/',
   },
-  description: "Scale Revenue, Not Chaos. Dallas-based AI architect building resilient automated systems and providing fractional technical leadership for high-growth SMBs.",
-  keywords: ["Fractional CTO Dallas", "AI Implementation Consultant", "n8n workflow architect", "Voice AI for Home Services", "automation business scaling"],
+  title: {
+    default: "Famous Sheamus | Global Fractional CTO & AI Architect",
+    template: "%s | Famous Sheamus"
+  },
+  description: "Famous Sheamus: AI Implementation Consultant & Fractional CTO with Global Capability. Based in Dallas, TX, serving enterprises worldwide. Available for on-site international audits and AI strategy.",
+  keywords: ["Fractional CTO Dallas", "Global AI Consultant", "Fractional CTO Worldwide", "AI Implementation Audit", "Enterprise AI Strategy", "n8n workflow architect", "Voice AI for Home Services", "automation business scaling"],
   // Favicon configuration
   icons: {
     icon: "/images/logo-blue-wash.png",
@@ -31,7 +34,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://famoussheamus.com',
     siteName: 'Famous Sheamus Consulting',
-    title: 'Famous Sheamus | Fractional CTO & AI Strategy',
+    title: 'Famous Sheamus | Fractional CTO & AI Architect',
     description: 'Scale Revenue, Not Chaos. Agnostic AI and automation solutions for high-growth SMBs.',
     images: [
       {
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Famous Sheamus | Fractional CTO',
+    title: 'Famous Sheamus | Fractional CTO & AI Architect',
     description: 'Decoupling revenue from headcount with agnostic AI infrastructure.',
     images: ['/images/og-main.png'],
   },
@@ -66,7 +69,7 @@ const jsonLd = {
     "https://github.com/famousshea",
     "https://www.reddit.com/user/FamousSheamusAI/"
   ],
-  "description": "Dallas-based AI architect and Fractional CTO building resilient automated systems and providing technical leadership for high-growth SMBs.",
+  "description": "AI Implementation Consultant and Fractional CTO with Global Capability. Based in Dallas, TX, serving enterprises worldwide. Available for worldwide travel for on-site AI audits, deep-dive implementation, and executive strategy sessions.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Dallas",

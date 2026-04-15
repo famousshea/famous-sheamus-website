@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "The Automation Journal | Famous Sheamus | Global CTO",
+  description: "Read the latest insights from a Global Fractional CTO on AI architecture, scaling revenue, and building resilient systems for global businesses.",
+  alternates: {
+    canonical: '/blog',
+  },
+};
+
 import { blogs } from "#site/content";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
-import { Footer } from "@/components/Footer";
 import { BlogCategoryAccordion } from "@/components/BlogCategoryAccordion";
 
 export default function BlogIndex() {
@@ -76,8 +85,6 @@ export default function BlogIndex() {
           <BlogCategoryAccordion categories={categories} />
         </div>
       </div>
-
-      <Footer />
     </main>
   );
 }

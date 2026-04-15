@@ -1,5 +1,38 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { services } from "#site/content";
+
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+  const service = services.find((service) => service.slug.split("/").pop() === params.slug);
+  if (!service) return {};
+
+  return {
+    title: service.title,
+    description: service.description,
+    alternates: {
+      canonical: service.permalink,
+    },
+    openGraph: {
+      title: service.title,
+      description: service.description,
+      type: "website",
+      siteName: "Famous Sheamus Consulting",
+      url: `https://famoussheamus.com${service.permalink}`,
+      images: [
+        {
+          url: "https://famoussheamus.com/images/og-main.png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.title,
+      description: service.description,
+      images: ["https://famoussheamus.com/images/og-main.png"],
+    },
+  };
+}
+
 import { MDXContent } from "@/components/mdx-content";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
