@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { services } from "#site/content";
+import { services, blogs } from "#site/content";
 
 const mainLinks = [
   { href: "/", label: "Home" },
@@ -14,10 +14,15 @@ export function Footer() {
   // Get all services to list them for bot crawlability
   const footerServices = [...services].sort((a, b) => (a.order || 99) - (b.order || 99));
 
+  // Extract unique published blog categories
+  const blogCategories = Array.from(
+    new Set(blogs.filter(b => b.published && b.category !== "Uncategorized").map(b => b.category))
+  ).sort();
+
   return (
     <footer className="w-full border-t border-border mt-20 bg-canvas/50 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
           {/* Column 1: Brand & Philosophy */}
           <div className="flex flex-col space-y-4">
@@ -46,7 +51,24 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Navigation */}
+          {/* Column 3: Category Links (Critical for GEO) */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">Automation Journal</h4>
+            <ul className="space-y-2">
+              {blogCategories.map((category) => (
+                <li key={category}>
+                  <Link
+                    href={`/blog`}
+                    className="text-sm text-zinc-500 hover:text-accent transition-colors"
+                  >
+                    {category}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Navigation */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4">Company</h4>
             <ul className="space-y-2">

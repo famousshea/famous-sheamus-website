@@ -57,7 +57,7 @@ const jsonLd = {
   "name": "Famous Sheamus Consulting",
   "@id": "https://famoussheamus.com/#organization",
   "url": "https://famoussheamus.com",
-  "image": "https://famoussheamus.com/logo.png", // Add your logo URL
+  "image": "https://famoussheamus.com/images/og-main.png", // Add your logo URL
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Dallas",
