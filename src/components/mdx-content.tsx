@@ -1,10 +1,12 @@
 import * as runtime from "react/jsx-runtime";
 import Image from "next/image";
 import WatercolorImage from "./WatercolorImage";
+import YouTube from "./YouTube";
 
 const sharedComponents = {
   Image,
   WatercolorImage,
+  YouTube,
 };
 
 const useMDXComponent = (code: string) => {
