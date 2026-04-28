@@ -9,3 +9,6 @@ export declare const blogs: Blog[]
 
 export type Service = Collections['services']['schema']['_output']
 export declare const services: Service[]
+
+export type Page = Collections['pages']['schema']['_output']
+export declare const pages: Page[]

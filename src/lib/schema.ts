@@ -16,7 +16,11 @@ export const organizationEntity = {
     "@id": `${SITE_URL}/#logo`,
     "url": `${SITE_URL}/images/logo-blue-wash.png`,
     "contentUrl": `${SITE_URL}/images/logo-blue-wash.png`,
-    "caption": "Famous Sheamus Consulting"
+    "caption": "Famous Sheamus Consulting",
+    "license": `${SITE_URL}/about`,
+    "acquireLicensePage": `${SITE_URL}/contact`,
+    "copyrightNotice": "© 2026 Famous Sheamus Consulting",
+    "creditText": "Famous Sheamus Consulting"
   },
   "image": { "@id": `${SITE_URL}/#logo` },
   "sameAs": [

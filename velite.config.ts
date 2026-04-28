@@ -40,6 +40,24 @@ const services = {
     })),
 };
 
+const pages = {
+  name: "Page",
+  pattern: "pages/**/*.mdx",
+  schema: s
+    .object({
+      title: s.string().max(99),
+      slug: s.path(),
+      description: s.string().max(500),
+      published: s.boolean().default(true),
+      body: s.mdx(),
+    })
+    .transform((data) => ({
+      ...data,
+      permalink: `/${data.slug.split("/").pop()}`,
+      filePath: `content/${data.slug}.mdx`,
+    })),
+};
+
 export default defineConfig({
   root: "content",
   output: {
@@ -49,7 +67,7 @@ export default defineConfig({
     name: "[name]-[hash:6].[ext]",
     clean: true,
   },
-  collections: { blogs, services },
+  collections: { blogs, services, pages },
   mdx: {
     rehypePlugins: [],
     remarkPlugins: [],

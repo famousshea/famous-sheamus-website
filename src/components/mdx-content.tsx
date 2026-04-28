@@ -3,12 +3,14 @@ import Image from "next/image";
 import ZoomableImage from "./ZoomableImage";
 import WatercolorImage from "./WatercolorImage";
 import YouTube from "./YouTube";
+import { Callout } from "./Callout";
 
 const sharedComponents = {
   Image: ZoomableImage,
   img: ZoomableImage,
   WatercolorImage,
   YouTube,
+  Callout,
 };
 
 const useMDXComponent = (code: string) => {

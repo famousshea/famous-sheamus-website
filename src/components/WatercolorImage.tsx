@@ -20,7 +20,15 @@ export default function WatercolorImage({
             {schema && (
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                    dangerouslySetInnerHTML={{ 
+                        __html: JSON.stringify({
+                            "license": "https://famoussheamus.com/about",
+                            "acquireLicensePage": "https://famoussheamus.com/contact",
+                            "copyrightNotice": "© 2026 Famous Sheamus Consulting",
+                            "creditText": "Famous Sheamus Consulting",
+                            ...schema 
+                        }) 
+                    }}
                 />
             )}
 
