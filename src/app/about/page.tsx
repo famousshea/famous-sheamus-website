@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
+import { SITE_URL, buildBreadcrumbs, buildGraphScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Sheamus | Global Fractional CTO & AI Architect",
@@ -15,8 +16,39 @@ import AboutCarousel from "@/components/AboutCarousel";
 import { TrustStack } from "@/components/TrustStack";
 
 export default function AboutPage() {
+  const aboutNodes = [
+    {
+      "@type": "AboutPage",
+      "@id": `${SITE_URL}/about/#webpage`,
+      "name": "About Sheamus | Global Fractional CTO & AI Architect",
+      "description": "Professional background, philosophy, and core expertise of Sheamus, a Fractional CTO specializing in AI implementation and business process automation.",
+      "url": `${SITE_URL}/about`,
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+      "mainEntity": { "@id": `${SITE_URL}/#sheamus` },
+      "significantLink": [
+        "https://www.linkedin.com/in/sheamus-byrne/",
+        "https://github.com/famousshea",
+        "https://x.com/famousshea"
+      ],
+      "knowsAbout": [
+        { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q11660", "name": "Artificial Intelligence" },
+        { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q5001911", "name": "Business Process Automation" },
+        { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q5287861", "name": "Chief Technology Officer" },
+        { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q179012", "name": "Project Management" }
+      ]
+    },
+    buildBreadcrumbs([
+      { name: "Home", url: SITE_URL },
+      { name: "About", url: `${SITE_URL}/about` }
+    ])
+  ];
+
   return (
     <main className="relative min-h-screen pt-32 pb-48 overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: buildGraphScript(aboutNodes) }}
+      />
       <TopNav />
       <ContactBadge />
 

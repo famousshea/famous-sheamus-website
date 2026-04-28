@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL, buildBreadcrumbs, buildGraphScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "The Automation Journal | Famous Sheamus | Global CTO",
@@ -37,8 +38,29 @@ export default function BlogIndex() {
     posts,
   }));
 
+  const blogListNodes = [
+    {
+      "@type": "CollectionPage",
+      "@id": `${SITE_URL}/blog/#webpage`,
+      "name": "The Automation Journal | Famous Sheamus",
+      "url": `${SITE_URL}/blog`,
+      "description": "Latest insights on AI architecture, scaling revenue, and building resilient systems.",
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+      "publisher": { "@id": `${SITE_URL}/#organization` },
+      "inLanguage": "en-US"
+    },
+    buildBreadcrumbs([
+      { name: "Home", url: SITE_URL },
+      { name: "Blog", url: `${SITE_URL}/blog` }
+    ])
+  ];
+
   return (
     <main className="min-h-screen pt-32 pb-48 px-4 overflow-hidden relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: buildGraphScript(blogListNodes) }}
+      />
       <TopNav />
       <ContactBadge />
       <div className="max-w-5xl mx-auto flex flex-col items-center">

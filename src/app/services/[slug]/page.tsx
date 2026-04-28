@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { services } from "#site/content";
+import { SITE_URL, buildBreadcrumbs, buildGraphScript, getServiceTopics } from "@/lib/schema";
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const service = services.find((service) => service.slug.split("/").pop() === params.slug);
@@ -55,8 +56,35 @@ export default function ServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
+  const bareSlug = service.slug.split("/").pop() ?? "";
+  const { about: serviceAbout, mentions: serviceMentions } = getServiceTopics(bareSlug);
+
+  const serviceNodes = [
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}${service.permalink}/#service`,
+      "name": service.title,
+      "description": service.description,
+      "url": `${SITE_URL}${service.permalink}`,
+      "provider": { "@id": `${SITE_URL}/#organization` },
+      "areaServed": "Worldwide",
+      "inLanguage": "en-US",
+      "about": serviceAbout,
+      "mentions": serviceMentions
+    },
+    buildBreadcrumbs([
+      { name: "Home", url: SITE_URL },
+      { name: "Services", url: `${SITE_URL}/services` },
+      { name: service.title, url: `${SITE_URL}${service.permalink}` }
+    ])
+  ];
+
   return (
     <main className="min-h-screen pt-32 pb-48 px-4 overflow-hidden relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: buildGraphScript(serviceNodes) }}
+      />
       <TopNav />
       <ContactBadge />
       <article className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700">

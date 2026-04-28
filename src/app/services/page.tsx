@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
+import { SITE_URL, buildBreadcrumbs, buildGraphScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "AI Services | Famous Sheamus | Global Fractional CTO",
@@ -25,28 +26,36 @@ export default function ServicesPage() {
   const featuredServices = sortedServices.filter(s => s.isFeatured);
   const standardServices = sortedServices.filter(s => !s.isFeatured);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Famous Sheamus Consulting Services",
-    "description": "Comprehensive AI automation and Fractional CTO services for revenue scaling.",
-    "itemListElement": sortedServices.map((service, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Service",
-        "name": service.title,
-        "description": service.description,
-        "url": `https://famoussheamus.com${service.permalink}`
-      }
-    }))
-  };
+  const servicesNodes = [
+    {
+      "@type": "ItemList",
+      "@id": `${SITE_URL}/services/#list`,
+      "name": "Famous Sheamus Consulting Services",
+      "description": "Comprehensive AI automation and Fractional CTO services for revenue scaling.",
+      "provider": { "@id": `${SITE_URL}/#organization` },
+      "itemListElement": sortedServices.map((service, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Service",
+          "@id": `${SITE_URL}${service.permalink}/#service`,
+          "name": service.title,
+          "description": service.description,
+          "url": `${SITE_URL}${service.permalink}`
+        }
+      }))
+    },
+    buildBreadcrumbs([
+      { name: "Home", url: SITE_URL },
+      { name: "Services", url: `${SITE_URL}/services` }
+    ])
+  ];
 
   return (
     <main className="relative min-h-screen pt-32 pb-24 bg-canvas">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: buildGraphScript(servicesNodes) }}
       />
       <TopNav />
       <ContactBadge />

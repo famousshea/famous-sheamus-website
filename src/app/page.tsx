@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HeroGreeting } from "@/components/HeroGreeting";
+import { SITE_URL, buildGraphScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Famous Sheamus | Global AI Consultant & Fractional CTO",
@@ -16,23 +17,28 @@ import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
 import { TrustStack } from "@/components/TrustStack";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Famous Sheamus | AI Implementation Consultant & Fractional CTO",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".hero-title", ".hero-description"]
-  },
-  "url": "https://famoussheamus.com"
-};
+const homepageNodes = [
+  {
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/#webpage`,
+    "name": "Famous Sheamus | Global AI Consultant & Fractional CTO",
+    "url": SITE_URL,
+    "isPartOf": { "@id": `${SITE_URL}/#website` },
+    "about": { "@id": `${SITE_URL}/#organization` },
+    "inLanguage": "en-US",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hero-title", ".hero-description"]
+    }
+  }
+];
 
 export default function Home() {
   return (
     <main className="relative min-h-screen pt-32 pb-24 overflow-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: buildGraphScript(homepageNodes) }}
       />
       <TopNav />
       <ContactBadge />

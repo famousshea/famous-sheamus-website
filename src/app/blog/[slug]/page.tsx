@@ -3,6 +3,7 @@ import { blogs } from "#site/content";
 import { MDXContent } from "@/components/mdx-content";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
+import { SITE_URL, buildBreadcrumbs, buildGraphScript, getArticleTopics } from "@/lib/schema";
 
 interface BlogPageProps {
   params: {
@@ -55,37 +56,41 @@ export default function BlogPage({ params }: BlogPageProps) {
     notFound();
   }
 
-  // Generate Article and FAQ Schema
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": blog.title,
-    "description": blog.description,
-    "datePublished": blog.date,
-    "author": {
-      "@type": "Person",
-      "name": "Sheamus",
-      "url": "https://famoussheamus.com/about"
+  // Derive the bare slug (e.g. "ai-roi-blueprint-no-new-software") for topic lookup
+  const bareSlug = blog.slug.split("/").pop() ?? "";
+  const { about: articleAbout, mentions: articleMentions } = getArticleTopics(bareSlug);
+
+  // Build consolidated @graph schema — author/publisher reference by @id, no entity duplication
+  const blogNodes = [
+    {
+      "@type": "BlogPosting",
+      "@id": `${SITE_URL}${blog.permalink}/#article`,
+      "headline": blog.title,
+      "description": blog.description,
+      "datePublished": blog.date,
+      "author": { "@id": `${SITE_URL}/#sheamus` },
+      "publisher": { "@id": `${SITE_URL}/#organization` },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}${blog.permalink}`
+      },
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+      "about": articleAbout,
+      "mentions": articleMentions,
+      "inLanguage": "en-US"
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Famous Sheamus Consulting",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://famoussheamus.com/images/logo-blue-wash.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://famoussheamus.com${blog.permalink}`
-    }
-  };
+    buildBreadcrumbs([
+      { name: "Home", url: SITE_URL },
+      { name: "Blog", url: `${SITE_URL}/blog` },
+      { name: blog.title, url: `${SITE_URL}${blog.permalink}` }
+    ])
+  ];
 
   return (
     <main className="min-h-screen pt-32 pb-48 px-4 overflow-hidden relative">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: buildGraphScript(blogNodes) }}
       />
       <TopNav />
       <ContactBadge />

@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 import Script from "next/script";
 import { Footer } from "@/components/Footer";
+import { organizationEntity, personEntity, websiteEntity, buildGraphScript } from "@/lib/schema";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -53,81 +54,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Nested JSON-LD for superior AI indexing
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Famous Sheamus Consulting",
-  "alternateName": "Famous Sheamus",
-  "@id": "https://famoussheamus.com/#organization",
-  "url": "https://famoussheamus.com",
-  "logo": "https://famoussheamus.com/images/logo-blue-wash.png",
-  "image": "https://famoussheamus.com/images/og-main.png",
-  "sameAs": [
-    "https://www.linkedin.com/in/sheamus-byrne/",
-    "https://x.com/famousshea",
-    "https://github.com/famousshea",
-    "https://www.reddit.com/user/FamousSheamusAI/"
-  ],
-  "description": "AI Implementation Consultant and Fractional CTO with Global Capability. Based in Dallas, TX, serving enterprises worldwide. Available for worldwide travel for on-site AI audits, deep-dive implementation, and executive strategy sessions.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Dallas",
-    "addressRegion": "TX",
-    "postalCode": "75201",
-    "addressCountry": "US"
-  },
-  "founder": {
-    "@type": "Person",
-    "@id": "https://famoussheamus.com/#sheamus",
-    "name": "Sheamus",
-    "jobTitle": ["Fractional CTO", "Automation Strategist"],
-    "url": "https://famoussheamus.com/about"
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Worldwide"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "09:00",
-    "closes": "18:00"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer service",
-    "url": "https://famoussheamus.com/contact"
-  },
-  "knowsAbout": [
-    "Artificial Intelligence",
-    "Enterprise Architecture",
-    "n8n Automation",
-    "Voice AI Receptionists",
-    "Process Optimization",
-    "SaaS Bloat Reduction",
-    "AI Implementation Consultant",
-    "Fractional CTO",
-    "Business Process Automation",
-    "Predictive Analytics",
-    "Legacy System Migration"
-  ],
-  "offers": {
-    "@type": "Offer",
-    "itemOffered": {
-      "@type": "Service",
-      "name": "Fractional CTO & Automation Strategy",
-      "description": "High-level technology leadership and AI implementation strategy to decouple revenue growth from headcount."
-    }
-  }
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -139,7 +65,13 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            dangerouslySetInnerHTML={{
+              __html: buildGraphScript([
+                organizationEntity,
+                personEntity,
+                websiteEntity
+              ])
+            }}
           />
           <div className="flex flex-col min-h-screen">
             <div className="flex-grow">

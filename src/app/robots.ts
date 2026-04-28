@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://www.famoussheamus.com/sitemap.xml',
+    sitemap: 'https://famoussheamus.com/sitemap.xml',
   };
 }

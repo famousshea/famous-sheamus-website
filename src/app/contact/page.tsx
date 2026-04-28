@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
+import { SITE_URL, buildBreadcrumbs, buildGraphScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact Famous Sheamus | Worldwide AI Strategy Audits",
@@ -51,8 +52,27 @@ const SOCIAL_LINKS = [
 ];
 
 export default function ContactPage() {
+  const contactNodes = [
+    {
+      "@type": "ContactPage",
+      "@id": `${SITE_URL}/contact/#webpage`,
+      "name": "Contact Famous Sheamus | Worldwide AI Strategy Audits",
+      "url": `${SITE_URL}/contact`,
+      "isPartOf": { "@id": `${SITE_URL}/#website` },
+      "mainEntity": { "@id": `${SITE_URL}/#organization` }
+    },
+    buildBreadcrumbs([
+      { name: "Home", url: SITE_URL },
+      { name: "Contact", url: `${SITE_URL}/contact` }
+    ])
+  ];
+
   return (
     <main className="relative min-h-screen pt-32 pb-48 overflow-hidden bg-canvas">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: buildGraphScript(contactNodes) }}
+      />
       <TopNav />
       {/* Background Vignette */}
       <div className="vignette fixed inset-0 pointer-events-none" />
