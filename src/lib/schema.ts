@@ -27,7 +27,11 @@ export const organizationEntity = {
     "https://www.linkedin.com/in/sheamus-byrne/",
     "https://x.com/famousshea",
     "https://github.com/famousshea",
-    "https://www.reddit.com/user/FamousSheamusAI/"
+    "https://www.reddit.com/user/FamousSheamusAI/",
+    "https://en.wikipedia.org/wiki/Zoho_Corporation",
+    "https://en.wikipedia.org/wiki/Chief_technology_officer",
+    "https://en.wikipedia.org/wiki/Digital_transformation",
+    "https://en.wikipedia.org/wiki/Business_process_automation"
   ],
   "description":
     "AI Implementation Consultant and Fractional CTO with Global Capability. Serving enterprises worldwide with agnostic AI implementation and automation strategy. Scale Revenue, Not Chaos.",
@@ -57,12 +61,10 @@ export const organizationEntity = {
     "Voice AI Receptionists",
     "Process Optimization",
     "SaaS Bloat Reduction",
-    "Fractional CTO",
-    "Predictive Analytics",
-    "Legacy System Migration",
-    "TDLR Compliance",
-    "NYC DOB Regulations",
-    "Gas Safe Register Protocols"
+    "Logic Engines",
+    "Zoho One Centralization",
+    "Digital Transformation",
+    "Workflow Automation"
   ],
   "mentions": [
     { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q130305687", "name": "n8n" },
@@ -101,7 +103,8 @@ export const personEntity = {
   "sameAs": [
     "https://www.linkedin.com/in/sheamus-byrne/",
     "https://github.com/famousshea",
-    "https://x.com/famousshea"
+    "https://x.com/famousshea",
+    "https://en.wikipedia.org/wiki/Chief_technology_officer"
   ],
   "knowsAbout": [
     { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q11660", "name": "Artificial Intelligence" },
@@ -164,6 +167,8 @@ const WD = {
   RAG:                 { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q121362277", "name": "Retrieval-Augmented Generation" },
   Latency:             { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q1771903",    "name": "Latency" },
   FSM:                 { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q5447122",    "name": "Field Service Management" },
+  Zoho:                { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q8063247",    "name": "Zoho Corporation" },
+  DigitalTransformation: { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q21008779",  "name": "Digital Transformation" },
 };
 
 
@@ -286,6 +291,24 @@ export function getArticleTopics(slug: string): { about: object[]; mentions: obj
   return articleTopicMap[slug] ?? {
     about:    [WD.AI, WD.BPA],
     mentions: [WD.LLM, WD.n8n],
+  };
+}
+
+// ─── Per-Case Study Wikidata Topic Map ───────────────────────────────────────
+const caseStudyTopicMap: Record<string, { about: object[]; mentions: object[] }> = {
+  "multipli": {
+    about:    [WD.DigitalTransformation, WD.Zoho, WD.BPA],
+    mentions: [WD.CRM, WD.LeadGen, WD.ROI],
+  },
+};
+
+/**
+ * Returns grounded Wikidata `about` and `mentions` arrays for a given case study slug.
+ */
+export function getCaseStudyTopics(slug: string): { about: object[]; mentions: object[] } {
+  return caseStudyTopicMap[slug] ?? {
+    about:    [WD.AI, WD.BPA],
+    mentions: [WD.ROI, WD.SystemArch],
   };
 }
 

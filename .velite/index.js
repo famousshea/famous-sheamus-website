@@ -3,3 +3,4 @@
 export { default as blogs } from './blogs.json' with { type: 'json' }
 export { default as services } from './services.json' with { type: 'json' }
 export { default as pages } from './pages.json' with { type: 'json' }
+export { default as caseStudies } from './caseStudies.json' with { type: 'json' }

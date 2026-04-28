@@ -12,3 +12,6 @@ export declare const services: Service[]
 
 export type Page = Collections['pages']['schema']['_output']
 export declare const pages: Page[]
+
+export type CaseStudy = Collections['caseStudies']['schema']['_output']
+export declare const caseStudies: CaseStudy[]

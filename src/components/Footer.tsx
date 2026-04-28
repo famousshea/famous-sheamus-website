@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { services, blogs, pages } from "#site/content";
+import { services, blogs, pages, caseStudies } from "#site/content";
 
 const mainLinks = [
   { href: "/", label: "Home" },
@@ -53,7 +53,7 @@ export function Footer() {
         <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent mb-12" />
 
         {/* Main Navigation Grid (Secondary) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-12">
 
           {/* Column 1: Brand & Philosophy */}
           <div className="flex flex-col space-y-4">
@@ -65,7 +65,24 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Column 2: Automation Journal */}
+          {/* Column 2: Proof of Work */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-foreground/50">Proof of Work</h4>
+            <ul className="space-y-2">
+              {caseStudies.filter(cs => cs.published).map((cs) => (
+                <li key={cs.slug}>
+                  <Link
+                    href={cs.permalink}
+                    className="text-sm text-zinc-500 hover:text-accent transition-colors"
+                  >
+                    {cs.companyName}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Automation Journal */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-foreground/50">Automation Journal</h4>
             <ul className="space-y-2">
@@ -82,7 +99,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Company */}
+          {/* Column 4: Company */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-foreground/50">Company</h4>
             <ul className="space-y-2">
@@ -99,7 +116,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Legal */}
+          {/* Column 5: Legal */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider mb-4 text-foreground/50">Legal</h4>
             <ul className="space-y-2">
