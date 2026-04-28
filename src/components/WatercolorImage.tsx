@@ -1,5 +1,5 @@
 // src/components/WatercolorImage.tsx
-import Image from 'next/image';
+import ZoomableImage from './ZoomableImage';
 
 export default function WatercolorImage({
     src,
@@ -26,7 +26,7 @@ export default function WatercolorImage({
 
             <figure className="my-10 border-l-4 border-teal-500 pl-6">
                 <div className="overflow-hidden rounded-xl shadow-md border border-zinc-200 dark:border-zinc-800 bg-white rotate-[0.5deg] transition-transform duration-500 hover:rotate-0 hover:scale-[1.01]">
-                    <Image
+                    <ZoomableImage
                         src={src}
                         alt={alt}
                         width={1200}

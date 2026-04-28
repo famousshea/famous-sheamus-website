@@ -35,7 +35,12 @@ export const organizationEntity = {
     "addressCountry": "US"
   },
   "founder": { "@id": `${SITE_URL}/#sheamus` },
-  "areaServed": "Worldwide",
+  "areaServed": [
+    "Worldwide",
+    { "@type": "City", "name": "Dallas", "sameAs": "https://www.wikidata.org/wiki/Q16557" },
+    { "@type": "City", "name": "New York City", "sameAs": "https://www.wikidata.org/wiki/Q60" },
+    { "@type": "City", "name": "London", "sameAs": "https://www.wikidata.org/wiki/Q84" }
+  ],
   "about": [
     { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q11660", "name": "Artificial Intelligence" },
     { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q5001911", "name": "Business Process Automation" }
@@ -50,7 +55,10 @@ export const organizationEntity = {
     "SaaS Bloat Reduction",
     "Fractional CTO",
     "Predictive Analytics",
-    "Legacy System Migration"
+    "Legacy System Migration",
+    "TDLR Compliance",
+    "NYC DOB Regulations",
+    "Gas Safe Register Protocols"
   ],
   "mentions": [
     { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q130305687", "name": "n8n" },
@@ -143,10 +151,17 @@ const WD = {
   MultiAgentSystem:    { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q529909",   "name": "Multi-Agent System" },
   Chatbot:             { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q870780",   "name": "Chatbot" },
   CRM:                 { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q485643",   "name": "Customer Relationship Management" },
-  SocialMedia:         { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q161168",   "name": "Social Media" },
-  LeadGen:             { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q6508383",  "name": "Lead Generation" },
-  SystemArch:          { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q1140925",  "name": "Systems Architecture" },
+  SocialMedia:         { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q202833",   "name": "Social Media" },
+  LeadGen:             { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q1583910",  "name": "Lead Generation" },
+  SystemArch:          { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q477538",   "name": "Systems Architecture" },
+  GasSafe:             { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q5526308",   "name": "Gas Safe Register" },
+  TDLR:                { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q7707637",   "name": "Texas Department of Licensing and Regulation" },
+  NYCDOB:              { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q13358874",  "name": "New York City Department of Buildings" },
+  RAG:                 { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q121362277", "name": "Retrieval-Augmented Generation" },
+  Latency:             { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q1771903",    "name": "Latency" },
+  FSM:                 { "@type": "Thing", "@id": "https://www.wikidata.org/wiki/Q5447122",    "name": "Field Service Management" },
 };
+
 
 // ─── Per-Service Wikidata Topic Map ──────────────────────────────────────────
 const serviceTopicMap: Record<string, { about: object[]; mentions: object[] }> = {
@@ -154,9 +169,9 @@ const serviceTopicMap: Record<string, { about: object[]; mentions: object[] }> =
     about:    [WD.CTO, WD.AI, WD.BPA],
     mentions: [WD.ROI, WD.Innovation, WD.ProjectManagement],
   },
-  "24-7-voice-ai-receptionist-for-bookings-qualification": {
+  "voice-ai-receptionist": {
     about:    [WD.AI, WD.CustomerService, WD.BPA],
-    mentions: [WD.NLP, WD.Chatbot, WD.LeadGen],
+    mentions: [WD.NLP, WD.Chatbot, WD.LeadGen, WD.ROI, WD.TDLR, WD.GasSafe, WD.NYCDOB],
   },
   "enterprise-crm-integration-real-time-data-pipelines": {
     about:    [WD.CRM, WD.DataIntegration, WD.BPA],
@@ -252,6 +267,10 @@ const articleTopicMap: Record<string, { about: object[]; mentions: object[] }> =
   "why-ai-projects-fail-without-discovery": {
     about:    [WD.ProjectManagement, WD.AI, WD.ROI],
     mentions: [WD.BPA, WD.LLM, WD.SaaS, WD.DataIntegration],
+  },
+  "the-cfos-guide-to-voice-ai-margin-traps": {
+    about:    [WD.AI, WD.ROI, WD.FinancialAnalysis],
+    mentions: [WD.RAG, WD.Latency, WD.FSM, WD.BPA, WD.TDLR, WD.NYCDOB],
   },
 };
 

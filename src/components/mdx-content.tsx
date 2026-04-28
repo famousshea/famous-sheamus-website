@@ -1,10 +1,12 @@
 import * as runtime from "react/jsx-runtime";
 import Image from "next/image";
+import ZoomableImage from "./ZoomableImage";
 import WatercolorImage from "./WatercolorImage";
 import YouTube from "./YouTube";
 
 const sharedComponents = {
-  Image,
+  Image: ZoomableImage,
+  img: ZoomableImage,
   WatercolorImage,
   YouTube,
 };
