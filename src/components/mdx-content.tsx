@@ -1,5 +1,4 @@
 import * as runtime from "react/jsx-runtime";
-import Image from "next/image";
 import ZoomableImage from "./ZoomableImage";
 import WatercolorImage from "./WatercolorImage";
 import YouTube from "./YouTube";
@@ -21,7 +20,7 @@ const useMDXComponent = (code: string) => {
 interface MDXProps {
   code: string;
   // This is optional (?), so existing pages passing only 'code' won't break
-  components?: Record<string, React.ComponentType<any>>;
+  components?: Record<string, React.ComponentType<Record<string, unknown>>>;
 }
 
 export function MDXContent({ code, components }: MDXProps) {

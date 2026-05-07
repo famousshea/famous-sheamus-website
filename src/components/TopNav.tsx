@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Home, User, Briefcase, FileText, Mail, Moon, Sun, BookOpen } from "lucide-react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, MotionValue } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -64,7 +64,7 @@ function DockIcon({
   link,
   isActive,
 }: {
-  mouseX: any;
+  mouseX: MotionValue<number>;
   link: typeof links[0];
   isActive: boolean;
 }) {
@@ -75,11 +75,11 @@ function DockIcon({
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthSync = useTransform(distance, [-150, 0, 150], [45, 85, 45]);
-  let width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
+  const widthSync = useTransform(distance, [-150, 0, 150], [45, 85, 45]);
+  const width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
 
   return (
-    <motion.div style={{ width } as any} className="flex items-center justify-center">
+    <motion.div style={{ width } as React.CSSProperties} className="flex items-center justify-center">
       <Link
         ref={ref}
         href={link.href}

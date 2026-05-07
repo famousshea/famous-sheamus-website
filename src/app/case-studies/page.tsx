@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
 import { caseStudies } from "#site/content";
-import Link from "next/link";
 import { TopNav } from "@/components/TopNav";
 import { ContactBadge } from "@/components/ContactBadge";
 import { SITE_URL, buildBreadcrumbs, buildGraphScript } from "@/lib/schema";
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function CaseStudiesPage() {
-  const sortedCaseStudies = [...caseStudies].sort((a, b) => (a.published ? 0 : 1));
+  const sortedCaseStudies = [...caseStudies].sort((a) => (a.published ? 0 : 1));
 
   const schemaNodes = [
     {

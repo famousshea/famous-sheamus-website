@@ -4,8 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { caseStudies } from "#site/content";
 
-export function CaseStudyCard({ cs }: { cs: any }) {
+type CaseStudy = (typeof caseStudies)[0];
+
+export function CaseStudyCard({ cs }: { cs: CaseStudy }) {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}

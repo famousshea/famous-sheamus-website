@@ -55,7 +55,7 @@ export function HeroGreeting() {
     <div className="flex flex-col gap-6 max-w-lg">
       <div className="space-y-2">
         <h1 className="hero-title text-5xl md:text-7xl font-bold tracking-tight text-foreground relative py-2">
-          Hello, I'm <br />
+          Hello, I&apos;m <br />
           <span className="relative">
             Sheamus.
             <div className="absolute -bottom-2 left-0 h-2 w-full bg-accent/20 rounded-full -rotate-1" />

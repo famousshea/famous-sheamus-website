@@ -81,7 +81,7 @@ export default function ContactPage() {
         {/* Header Section */}
         <section className="mb-16">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            Let's <span className="text-accent underline decoration-4 underline-offset-8">Connect.</span>
+            Let&apos;s <span className="text-accent underline decoration-4 underline-offset-8">Connect.</span>
           </h1>
           <p className="text-xl md:text-2xl text-zinc-500 max-w-2xl leading-relaxed">
             Ready to audit your existing workflows and replace operational chaos with AI-driven precision?

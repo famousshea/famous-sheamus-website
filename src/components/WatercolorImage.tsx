@@ -12,7 +12,7 @@ export default function WatercolorImage({
     alt: string;
     caption?: string;
     priority?: boolean;
-    schema?: Record<string, any>;
+    schema?: Record<string, unknown>;
 }) {
     return (
         <>

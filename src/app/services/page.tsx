@@ -94,8 +94,9 @@ export default function ServicesPage() {
 }
 
 // Reusable Card Component to keep code clean
-function ServiceCard({ service, isFeatured }: { service: any; isFeatured: boolean }) {
-  const IconComponent = (LucideIcons as any)[service.icon || "Bot"] || LucideIcons.Bot;
+type Service = (typeof services)[0];
+function ServiceCard({ service, isFeatured }: { service: Service; isFeatured: boolean }) {
+  const IconComponent = (LucideIcons as unknown as Record<string, React.ComponentType<{ size?: number; className?: string; strokeWidth?: number }>>)[service.icon || "Bot"] || LucideIcons.Bot;
 
   return (
     <Link

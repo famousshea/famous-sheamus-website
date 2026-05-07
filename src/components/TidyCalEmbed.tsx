@@ -52,8 +52,12 @@ export function TidyCalEmbed() {
 }
 
 // Ensure TypeScript doesn't complain about window.TidyCal
+interface TidyCalAPI {
+  init(el: Element): void;
+}
+
 declare global {
   interface Window {
-    TidyCal?: any;
+    TidyCal?: TidyCalAPI;
   }
 }
