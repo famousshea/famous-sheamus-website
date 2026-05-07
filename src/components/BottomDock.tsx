@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useMotionValue, useTransform, useSpring, MotionValue } from "framer-motion";
+import { motion, useMotionValue, useTransform, useSpring, MotionValue, MotionStyle } from "framer-motion";
 import Link from "next/link";
 import { Home, Briefcase, FileCode2, BookOpen, Layers, Mail, User } from "lucide-react";
 
@@ -63,7 +63,7 @@ function DockIcon({
       </div>
       <motion.div
         ref={ref}
-        style={{ width, height: width } as React.CSSProperties}
+        style={{ width, height: width } as MotionStyle}
         className="flex items-center justify-center rounded-full bg-white/5 p-2 ring-1 ring-white/10 transition-colors group-hover:bg-white/10 group-hover:ring-primary/50"
       >
         {children}

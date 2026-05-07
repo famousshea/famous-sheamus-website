@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Home, User, Briefcase, FileText, Mail, Moon, Sun, BookOpen } from "lucide-react";
-import { motion, useMotionValue, useSpring, useTransform, MotionValue } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, MotionValue, MotionStyle } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -79,7 +79,7 @@ function DockIcon({
   const width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
 
   return (
-    <motion.div style={{ width } as React.CSSProperties} className="flex items-center justify-center">
+    <motion.div style={{ width } as MotionStyle} className="flex items-center justify-center">
       <Link
         ref={ref}
         href={link.href}
