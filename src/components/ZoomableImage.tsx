@@ -97,7 +97,7 @@ export default function ZoomableImage({ className, alt, ...props }: ImageProps) 
           width={width}
           height={height}
           {...restProps}
-          className={cn("transition-all duration-300 group-hover:brightness-95", props.className)}
+          className={cn("transition-all duration-300 group-hover:brightness-95", className)}
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 rounded-inherit pointer-events-none" />
       </div>
