@@ -18,7 +18,7 @@ function SmallBlogCard({ blog }: { blog: Blog }) {
   return (
     <Link 
       href={blog.permalink}
-      className="group block p-6 rounded-2xl bg-white/70 dark:bg-black/20 border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/30 shadow-sm hover:shadow-lg transition-all relative overflow-hidden h-full flex flex-col"
+      className="group block p-6 rounded-2xl bg-white/75 dark:bg-zinc-950/60 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-accent/40 dark:hover:border-accent/40 shadow-sm hover:shadow-lg transition-all backdrop-blur-md relative overflow-hidden h-full flex flex-col"
     >
       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl transition-all group-hover:scale-150 group-hover:bg-primary/10 dark:group-hover:bg-primary/20" />
       <div className="relative z-10 flex-1 flex flex-col">

@@ -119,7 +119,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           <div className="md:col-span-2 flex flex-col gap-8">
             {cs.heroImage && (
-              <div className="relative w-full overflow-hidden rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm p-4 md:p-8">
+              <div className="relative w-full overflow-hidden rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md p-4 md:p-8">
                 <ZoomableImage 
                   src={cs.heroImage} 
                   alt={`${cs.companyName} Project Architecture`}
@@ -129,7 +129,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
                 />
               </div>
             )}
-            <div className="rounded-2xl bg-white/50 dark:bg-zinc-900/50 border border-border p-6 backdrop-blur-sm">
+            <div className="rounded-2xl bg-white/75 dark:bg-zinc-950/60 border border-zinc-200/50 dark:border-zinc-800/50 p-6 backdrop-blur-md">
               <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2">My Role</h3>
               <p className="text-xl font-bold">{cs.roleTitle || "Fractional CTO & Lead Architect"}</p>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -139,12 +139,12 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
           <div className="space-y-4">
              {cs.stats?.map((stat: string, i: number) => (
-               <div key={i} className="p-6 rounded-2xl border border-accent/20 bg-accent/5 backdrop-blur-sm">
+               <div key={i} className="p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md">
                   <p className="text-lg font-bold" style={{ color: 'var(--brand-color)' }}>{stat}</p>
                </div>
              ))}
              {cs.clientReference && (
-               <div className="p-6 rounded-2xl border border-border bg-white/30 dark:bg-zinc-900/30 backdrop-blur-sm">
+               <div className="p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md">
                   <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-4">Client Reference</h4>
                   <div className="flex items-center gap-4">
                     {cs.clientReference.image && (
@@ -178,8 +178,8 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         </div>
 
         {/* Three Pillars Section */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
-          <div className="space-y-4">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+          <div className="space-y-4 p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md">
             <div className="h-12 w-12 rounded-xl bg-red-500/10 flex items-center justify-center">
               <Target className="h-6 w-6 text-red-500" />
             </div>
@@ -188,7 +188,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
               Operational drag caused by manual processes and missed leads during rapid expansion.
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md">
             <div className="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
               <Zap className="h-6 w-6 text-blue-500" />
             </div>
@@ -197,7 +197,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
               Digital transformation via agnostic AI implementation and custom-built n8n workflows.
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md">
             <div className="h-12 w-12 rounded-xl bg-green-500/10 flex items-center justify-center">
               <CheckCircle2 className="h-6 w-6 text-green-500" />
             </div>
@@ -211,7 +211,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         {/* Schematic Section */}
         {cs.showTechnicalSchematic && (
           <section className="mb-24">
-             <div className="rounded-3xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 md:p-12 backdrop-blur-sm">
+             <div className="rounded-3xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 p-8 md:p-12 backdrop-blur-md">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center">
                     <Workflow className="h-5 w-5 text-accent" />
@@ -240,7 +240,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
           </section>
         )}
 
-        <article className="prose prose-lg dark:prose-invert prose-headings:font-bold max-w-none">
+        <article className="prose prose-lg dark:prose-invert prose-headings:font-bold max-w-4xl mx-auto p-5 sm:p-8 md:p-12 lg:p-16 rounded-3xl bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md border border-zinc-200/50 dark:border-zinc-800/50 shadow-xl shadow-zinc-200/5 dark:shadow-none mt-12 relative z-10">
           <MDXContent code={cs.body} />
         </article>
       </div>

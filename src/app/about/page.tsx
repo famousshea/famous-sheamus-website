@@ -75,14 +75,14 @@ export default function AboutPage() {
 
         {/* Philosophy + Core Skills Row */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <article className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
+          <article className="rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 p-6 backdrop-blur-md">
             <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Philosophy</span>
             <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
               My approach is simple: No new software to learn, just pure efficiency. I specialize in building unseen, resilient architectures that work invisibly in the background.
             </p>
           </article>
 
-          <article className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-6 backdrop-blur-sm">
+          <article className="rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 p-6 backdrop-blur-md">
             <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Core Skills</span>
             <ul className="space-y-3 text-zinc-600 dark:text-zinc-400">
               <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent"></span> Technology Leadership</li>
@@ -96,7 +96,7 @@ export default function AboutPage() {
         </section>
 
         {/* Full-Width Background Section */}
-        <section className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm mb-8">
+        <section className="rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 p-8 backdrop-blur-md mb-8">
           <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Background</span>
           <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
             With over a decade of experience in the technology sector, my journey has evolved from foundational roles in IT support and systems engineering to leading strategic software initiatives and implementation of automated systems. I&apos;ve spent years building robust infrastructures and managing complex operations for companies like prototype:IT and Makeready, eventually specializing in AI-driven automation to bridge the gap between technical complexity and scalable business growth.
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </section>
 
         {/* Full-Width Personal Life Section */}
-        <section className="rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm">
+        <section className="rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 p-8 backdrop-blur-md">
           <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-bold rounded-full uppercase tracking-wider mb-4">Personal Life</span>
           <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
             Outside of the keyboard, I&apos;m driven by the same spirit of exploration that defines my work. I&apos;m an avid traveler with a deep passion for experiencing new cultures, cuisines, and landscapes — the world is too vast to see from a desk. I love cooking for others, treating the kitchen as another system to master and a way to bring people together. When I&apos;m not at sea, you&apos;ll find me in the outdoors — hiking, camping, and generally embracing whatever terrain is available. Video games are a constant companion, equal parts creative outlet and competitive arena. But the north star of it all is sailing. My ultimate ambition is to circumnavigate the globe on my own vessel — the most demanding and rewarding systems challenge I can imagine.

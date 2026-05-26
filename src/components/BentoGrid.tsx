@@ -44,7 +44,7 @@ export function BentoGrid() {
         <motion.div
           key={service.title}
           whileHover={{ scale: 1.02 }}
-          className={`group relative overflow-hidden rounded-2xl bg-white/50 dark:bg-canvas-dark/50 border border-black/10 dark:border-white/10 p-8 backdrop-blur-sm transition-all hover:shadow-lg ${service.colSpan}`}
+          className={`group relative overflow-hidden rounded-2xl bg-white/75 dark:bg-zinc-950/60 border border-zinc-200/50 dark:border-zinc-800/50 p-8 backdrop-blur-md transition-all hover:shadow-lg ${service.colSpan}`}
         >
           {/* Watercolor tint splash effect */}
           <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-secondary/20 blur-3xl transition-all group-hover:bg-primary/30 group-hover:blur-2xl" />

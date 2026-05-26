@@ -83,7 +83,7 @@ export default function BlogIndex() {
               <Link
                 key={blog.slug}
                 href={blog.permalink}
-                className="group block p-8 rounded-3xl bg-white/40 dark:bg-black/20 border border-black/5 dark:border-white/5 shadow-md hover:shadow-xl transition-all backdrop-blur-md relative overflow-hidden"
+                className="group block p-8 rounded-3xl bg-white/75 dark:bg-zinc-950/60 border border-zinc-200/50 dark:border-zinc-800/50 shadow-md hover:shadow-xl transition-all backdrop-blur-md relative overflow-hidden"
               >
                 <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-secondary/10 blur-3xl transition-all group-hover:bg-primary/20 group-hover:blur-2xl" />
                 <div className="relative z-10">

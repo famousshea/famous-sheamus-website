@@ -12,7 +12,7 @@ export function CaseStudyCard({ cs }: { cs: CaseStudy }) {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="group relative h-full flex flex-col rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 overflow-hidden backdrop-blur-sm transition-all hover:shadow-xl hover:border-accent/30"
+      className="group relative h-full flex flex-col rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 overflow-hidden backdrop-blur-md transition-all hover:shadow-xl hover:border-accent/30"
     >
       <Link href={cs.permalink} className="flex flex-col h-full">
         {/* Watercolor splash background for logo */}

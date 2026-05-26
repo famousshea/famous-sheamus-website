@@ -116,7 +116,7 @@ export function ServiceFeed() {
               <div className="group relative z-10 w-full h-[150px] pb-4">
                 <Link href={service.permalink} className="block w-full h-full">
                   <div className="absolute left-[-29px] top-6 h-3 w-3 rounded-full border-2 border-background bg-zinc-300 group-hover:bg-blue-500 hidden lg:block transition-all" />
-                  <div className="h-full rounded-2xl border border-border bg-white/40 dark:bg-zinc-900/40 p-5 shadow-sm backdrop-blur-sm transition-all hover:bg-white dark:hover:bg-zinc-800 hover:border-blue-500/30">
+                  <div className="h-full rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 p-5 shadow-sm backdrop-blur-md transition-all hover:shadow-md hover:border-blue-500/30">
                     <div className="mb-2 flex items-center gap-3">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-800 group-hover:bg-blue-500/10 transition-colors">
                         <IconComponent className="h-4 w-4 text-zinc-500 group-hover:text-blue-600" />

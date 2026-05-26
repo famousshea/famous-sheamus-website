@@ -94,7 +94,7 @@ export default function BlogPage({ params }: BlogPageProps) {
       />
       <TopNav />
       <ContactBadge />
-      <article className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700">
+      <article className="max-w-3xl mx-auto p-5 sm:p-8 md:p-12 lg:p-16 rounded-3xl bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md border border-zinc-200/50 dark:border-zinc-800/50 shadow-xl shadow-zinc-200/5 dark:shadow-none animate-in fade-in slide-in-from-bottom-8 duration-700 relative z-10">
         <header className="mb-12 border-b border-black/10 dark:border-white/10 pb-8 relative">
           <div className="absolute -left-16 -top-16 w-32 h-32 bg-primary/20 rounded-full blur-[60px]" />
 

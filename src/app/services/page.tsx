@@ -101,7 +101,7 @@ function ServiceCard({ service, isFeatured }: { service: Service; isFeatured: bo
   return (
     <Link
       href={service.permalink}
-      className={`group relative flex flex-col justify-between rounded-2xl border border-border bg-white/50 dark:bg-zinc-900/50 p-8 backdrop-blur-sm transition-all hover:border-accent/50 hover:shadow-xl ${isFeatured ? "md:flex-row md:items-center gap-8 border-accent/20 ring-1 ring-accent/5" : ""
+      className={`group relative flex flex-col justify-between rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 p-8 backdrop-blur-md transition-all hover:border-accent/50 hover:shadow-xl ${isFeatured ? "md:flex-row md:items-center gap-8 border-accent/20 ring-1 ring-accent/5" : ""
         }`}
     >
       <div className={isFeatured ? "md:max-w-2xl" : ""}>

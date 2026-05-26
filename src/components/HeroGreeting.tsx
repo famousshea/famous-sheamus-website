@@ -52,7 +52,7 @@ export function HeroGreeting() {
   ];
 
   return (
-    <div className="flex flex-col gap-6 max-w-lg">
+    <div className="flex flex-col gap-6 max-w-lg p-6 sm:p-8 lg:p-10 rounded-3xl bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md border border-zinc-200/50 dark:border-zinc-800/50 shadow-xl shadow-zinc-200/5 dark:shadow-none">
       <div className="space-y-2">
         <h1 className="hero-title text-5xl md:text-7xl font-bold tracking-tight text-foreground relative py-2">
           Hello, I&apos;m <br />
