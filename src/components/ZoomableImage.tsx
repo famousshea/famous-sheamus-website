@@ -92,10 +92,11 @@ export default function ZoomableImage({ className, alt, ...props }: ImageProps) 
         className={cn("relative cursor-zoom-in group inline-block w-full h-full", className)}
         onClick={() => setIsExpanded(true)}
       >
-        <Image 
-          alt={alt} 
+        <Image
+          alt={alt}
           width={width}
           height={height}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
           {...restProps}
           className={cn("transition-all duration-300 group-hover:brightness-95", className)}
         />

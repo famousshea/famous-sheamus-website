@@ -1,15 +1,15 @@
-// components/mdx/YouTube.tsx
+"use client";
+
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+
 export default function YouTube({ id }: { id: string }) {
     return (
-        <div className="my-8 aspect-video w-full overflow-hidden rounded-xl border-2 border-zinc-900 shadow-[8px_8px_0px_0px_rgba(0,128,128,0.2)] bg-zinc-100">
-            <iframe
-                className="h-full w-full"
-                src={`https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1`}
+        <div className="my-8 w-full overflow-hidden rounded-xl border-2 border-zinc-900 shadow-[8px_8px_0px_0px_rgba(0,128,128,0.2)] [&_.yt-lite]:w-full">
+            <LiteYouTubeEmbed
+                id={id}
                 title="YouTube video player"
-                // These permissions are critical to prevent browser blocks
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
+                params="rel=0&modestbranding=1"
             />
         </div>
     );

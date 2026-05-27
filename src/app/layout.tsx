@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   keywords: ["Fractional CTO Dallas", "Global AI Consultant", "Fractional CTO Worldwide", "AI Implementation Audit", "Enterprise AI Strategy", "n8n workflow architect", "Voice AI for Home Services", "automation business scaling"],
   // Favicon configuration
   icons: {
-    icon: "/images/logo-blue-wash.png",
-    shortcut: "/images/logo-blue-wash.png",
-    apple: "/images/logo-blue-wash.png",
+    icon: "/images/favicon-32x32.png",
+    shortcut: "/images/favicon-32x32.png",
+    apple: "/images/favicon-32x32.png",
   },
   // Open Graph (Thumbnail) configuration
   openGraph: {
@@ -82,9 +82,9 @@ export default function RootLayout({
         </ThemeProvider>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=G-MDF6DDLEE0`}
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="lazyOnload">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

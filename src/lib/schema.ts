@@ -14,8 +14,8 @@ export const organizationEntity = {
   "logo": {
     "@type": "ImageObject",
     "@id": `${SITE_URL}/#logo`,
-    "url": `${SITE_URL}/images/logo-blue-wash.png`,
-    "contentUrl": `${SITE_URL}/images/logo-blue-wash.png`,
+    "url": `${SITE_URL}/images/no-text-no-bg-logo.png`,
+    "contentUrl": `${SITE_URL}/images/no-text-no-bg-logo.png`,
     "caption": "Famous Sheamus Consulting",
     "license": `${SITE_URL}/about`,
     "acquireLicensePage": `${SITE_URL}/contact`,

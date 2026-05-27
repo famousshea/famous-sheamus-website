@@ -9,7 +9,7 @@ const nextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://asset-tidycal.b-cdn.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://asset-tidycal.b-cdn.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://asset-tidycal.b-cdn.net; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://tidycal.com; frame-src 'self' https://tidycal.com https://www.youtube-nocookie.com; frame-ancestors 'self'; upgrade-insecure-requests;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://asset-tidycal.b-cdn.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://asset-tidycal.b-cdn.net; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://asset-tidycal.b-cdn.net https://i.ytimg.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://tidycal.com; frame-src 'self' https://tidycal.com https://www.youtube-nocookie.com; frame-ancestors 'self'; upgrade-insecure-requests;",
           },
           {
             key: "Strict-Transport-Security",
