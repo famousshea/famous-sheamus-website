@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export default function ZoomableImage({ className, alt, ...props }: ImageProps) {
+export default function ZoomableImage({ className, alt, quality = 60, ...props }: ImageProps & { quality?: number }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { width, height, ...restProps } = props;
@@ -96,6 +96,7 @@ export default function ZoomableImage({ className, alt, ...props }: ImageProps) 
           alt={alt}
           width={width}
           height={height}
+          quality={quality}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
           {...restProps}
           className={cn("transition-all duration-300 group-hover:brightness-95", className)}
