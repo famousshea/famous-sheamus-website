@@ -80,6 +80,8 @@ const caseStudies = {
       }).optional(),
       roleTitle: s.string().optional(),
       roleDescription: s.string().optional(),
+      roleImage: s.string().optional(),
+      roleLink: s.string().url().optional(),
       pillars: s.object({
         challenge: s.string(),
         approach: s.string(),
