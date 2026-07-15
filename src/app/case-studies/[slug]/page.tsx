@@ -185,7 +185,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
             <h3 className="text-xl font-bold">The Challenge</h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              Operational drag caused by manual processes and missed leads during rapid expansion.
+              {cs.pillars?.challenge ?? "Operational drag caused by manual processes and missed leads during rapid expansion."}
             </p>
           </div>
           <div className="space-y-4 p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md">
@@ -194,7 +194,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
             <h3 className="text-xl font-bold">The Approach</h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              Digital transformation via agnostic AI implementation and custom-built n8n workflows.
+              {cs.pillars?.approach ?? "Digital transformation via agnostic AI implementation and custom-built n8n workflows."}
             </p>
           </div>
           <div className="space-y-4 p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md">
@@ -203,7 +203,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
             <h3 className="text-xl font-bold">The Result</h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              Scaled revenue while maintaining static headcount through automated logic engines.
+              {cs.pillars?.result ?? "Scaled revenue while maintaining static headcount through automated logic engines."}
             </p>
           </div>
         </section>

@@ -80,6 +80,11 @@ const caseStudies = {
       }).optional(),
       roleTitle: s.string().optional(),
       roleDescription: s.string().optional(),
+      pillars: s.object({
+        challenge: s.string(),
+        approach: s.string(),
+        result: s.string(),
+      }).optional(),
       heroImage: s.string().optional(),
       showTechnicalSchematic: s.boolean().default(false),
       published: s.boolean().default(true),
