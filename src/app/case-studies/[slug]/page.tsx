@@ -136,6 +136,24 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
                 {cs.roleDescription || "Architected the end-to-end automation engine, oversaw API integrations, and established zero-retention data protocols."}
               </p>
             </div>
+            {cs.roleImage && (
+              <Link
+                href={cs.roleLink || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-2xl overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 bg-white/75 dark:bg-zinc-950/60 backdrop-blur-md p-3 md:p-4 transition-all hover:border-accent/40 hover:shadow-lg"
+              >
+                <img
+                  src={cs.roleImage}
+                  alt={`${cs.companyName} — ${cs.roleTitle || "Role"} experience on LinkedIn`}
+                  className="w-full h-auto rounded-lg"
+                />
+                <span className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-zinc-400 group-hover:text-blue-500 transition-colors">
+                  <Linkedin className="h-3 w-3" />
+                  View on LinkedIn
+                </span>
+              </Link>
+            )}
           </div>
           <div className="space-y-4">
              {cs.stats?.map((stat: string, i: number) => (
