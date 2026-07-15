@@ -300,6 +300,10 @@ const caseStudyTopicMap: Record<string, { about: object[]; mentions: object[] }>
     about: [WD.DigitalTransformation, WD.Zoho, WD.BPA],
     mentions: [WD.CRM, WD.LeadGen, WD.ROI],
   },
+  "smb-team": {
+    about: [WD.AI, WD.DigitalTransformation, WD.CTO],
+    mentions: [WD.BPA, WD.ROI, WD.CRM],
+  },
 };
 
 /**
